@@ -1,0 +1,36 @@
+@import "variables";
+
+nav {
+  display: flex;
+  padding: 5px 5%;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 90vw;
+  background-color: $accent-color;
+  h1 {
+    color: $primary-color;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      margin-left: 1.5rem;
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        font-size: 95%;
+        font-weight: 400;
+        padding: 4px 8px;
+        border-radius: 5px;
+        a:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+  }
+}
+
+
