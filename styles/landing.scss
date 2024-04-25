@@ -1,7 +1,7 @@
 @import "variables";
 
 /*--------------- Section 1 Story Previews ---------------*/
-.landing_section1 {
+#landing_section1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
   min-height: 60vh;
   gap: 100px;
   border-bottom: solid black 1px;
-  margin-top: 75px;
+  margin-top: 70px;
 
   h1 {
     color: $primary-color;
@@ -121,7 +121,7 @@
 }
 
 /*--------------- Section 3 About ---------------*/
-.landing_section3 {
+#landing_section3 {
   display: flex;
   flex-direction: column;
   justify-content: center;

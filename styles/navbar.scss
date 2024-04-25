@@ -6,7 +6,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  height: 70px;
   top: 0;
+  z-index: 1;
   width: 90vw;
   background-color: $accent-color;
   h1 {
