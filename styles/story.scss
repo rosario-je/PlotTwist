@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', serif;
+  background: #DCD0D0
+};
+
+.subnav {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    flex-direction: row;
+    padding: 0 1.5em;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.userstory{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Inter', serif;
+}
+
+.likecounter{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Inter', serif;
+}
+.heart {
+  display: flex;
+  color: #D90429;
+}
+
+.maintitle {
+  font-family: 'Inter', serif;
+  font-size: 48px;
+}
+
+textarea {
+  resize: none;
+  width: 835px;
+  height: 550px;
+  flex-shrink: 0;
+  background: #DCD0D0;
+  font-family: 'Inter', serif;
+  border: none;
+  overflow: hidden;
+}
