@@ -1,0 +1,211 @@
+@import "variables";
+
+/*--------------- Section 1 Story Previews ---------------*/
+#landing_section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  min-height: 60vh;
+  gap: 100px;
+  border-bottom: solid black 1px;
+  margin-top: 70px;
+
+  h1 {
+    color: $primary-color;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin: 0px;
+    padding-bottom: 30px;
+  }
+  h2 {
+    color: $text-color;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+    padding-bottom: 35px;
+  }
+  p {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+    padding-bottom: 35px;
+  }
+  .button_container {
+    display: flex;
+    justify-content: start;
+    gap: 50px;
+  }
+  button {
+    background-color: $accent-color;
+    color: white;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 175px;
+    height: 45px;
+    border-radius: 5px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+/*--------------- Left Container Styles ---------------*/
+.left_container_section1 {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/*--------------- Right Container Styles--------------- */
+.right_container_section1 {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-color;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.image1,
+.image2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    text-align: center;
+  }
+  img {
+    width: 70%;
+    height: auto;
+  }
+}
+/*--------------- Section 2 Story Previews ---------------*/
+.story_previews_landing_section2 {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  .story_preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+
+    img {
+      width: 300px;
+      height: 300px;
+      border-radius: 5px;
+    }
+  }
+}
+
+/*--------------- Section 3 About ---------------*/
+#landing_section3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 100px;
+  gap: 50px;
+  background-color: $bg-color;
+  border-top: solid black 1px;
+  text-align: center;
+  line-height: normal;
+  font-style: normal;
+  .landing_section3_info {
+    h1 {
+      color: $text-color;
+      font-size: 3rem;
+      font-weight: 400;
+      margin: 0px;
+      padding-bottom: 30px;
+      strong {
+        font-weight: 800;
+      }
+    }
+    h3 {
+      color: $text-color;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0 auto;
+      width: 35%;
+      padding-bottom: 40px;
+    }
+    p {
+      font-size: 1.5rem;
+
+      font-weight: 400;
+      margin: 0px;
+      padding-bottom: 35px;
+    }
+    .button_container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+    button {
+      background-color: $accent-color;
+      color: white;
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      width: 175px;
+      height: 45px;
+      border-radius: 5px;
+    }
+    #devices_image_container {
+      padding-top: 50px;
+      padding-left: 100px;
+    }
+  }
+}
+
+/*--------------- Section 3 Footer ---------------*/
+
+footer {
+  background-color: $accent-color;
+}
+.developers_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  color: white;
+  padding-top: 10px;
+}
+
+.developers_footer div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.footer_info {
+  color: white;
+}
