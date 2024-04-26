@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+<!-- External Styles (text/icons) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+<!-- Internal Styles -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/story.css" />
+
+<!-- Internal Scripts -->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/likebutton.js"></script>
+
+</head>
+
+<body>
+  <!-- Main story box -->
+  <div class="mainstory">
+    <h1 class="maintitle">Far Away Castle</h1>
+    <p class= "story">Far away, nestled in the misty hills, stood the grand Far Away Castle. Its towering spires pierced the clouds, casting long shadows over the lush valleys below. Legends whispered tales of the castle's enchantments, of brave knights and fair maidens, and of mysteries waiting to be unraveled. One stormy night, as lightning danced across the sky and thunder echoed through the ancient halls, a lone traveler sought refuge within the castle's formidable walls. His name was Cedric, a weary adventurer with tales etched into the lines of his weathered face. Seeking shelter from the tempest, Cedric stumbled upon the castle's great oak doors, which creaked open with an eerie groan. Inside, he found himself in a grand hall adorned with tapestries depicting battles of old and chandeliers casting flickering light. But as Cedric ventured deeper into the castle's labyrinthine corridors, he discovered secrets hidden within its walls.
+    </p>
+    <div class="usercounter">
+      <div class="user">@Levi</div>
+      <div class="likecounter">
+        <button id="like-button"><i class="fa-solid fa-heart heart"></i></button>
+        <span id="like-count">0</span>
+      </div>
+    </div>
+  </div>
+  <div class="navbuttons">
+    <div class="storybuttons">
+      <button id=addstory>Add to Story</button>
+      <button id=viewadds>View Adds</button>
+    </div>
+    <button id="next">Next Page</button>
+  </div>
+</body>
+
+</html>
