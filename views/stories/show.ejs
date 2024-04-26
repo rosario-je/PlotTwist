@@ -25,6 +25,7 @@
 <!-- Internal Scripts -->
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/likebutton.js"></script>
+  <script defer src="/scripts/hidecontributions.js"></script>
 
 </head>
 
@@ -33,7 +34,7 @@
   <!-- Main story box -->
   <div class="mainstory">
     <h1 class="maintitle"><%=title%></h1>
-    <p class= "story"><%=content%></p>
+    <p class="story"><%=content%></p>
     <div class="usercounter">
       <div class="user">@<%=username%></div>
       <div class="likecounter">
@@ -44,11 +45,29 @@
   </div>
   <div class="navbuttons">
     <div class="storybuttons">
-      <button class=addstory>Add to Story</button>
-      <button class=viewadds>View Adds</button>
+      <a href="/stories/<%=id%>/add"class=addstory>Add to Story</a>
+      <button id=viewadds>View Adds</button>
     </div>
+    <% if (nextpageid) { %>
     <a href="<%=nextpageid%>" class="next">Next Page</a>
+    <% } %>
   </div>
+
+   <!-- Contributions --> 
+
+  <section class="contributions hiddentext">
+    <h2>Contributions</h2>
+   <% for (let contribution of contributions) {%>
+    <article>
+      <address><%=contribution.username%></address>
+      <p><%=contribution.content%></p>
+      <div class="likecounter">
+        <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
+        <span class="like-count">0</span>
+      </div>
+    </article>
+   <% } %>
+  </section>
 </body>
 
 </html>
