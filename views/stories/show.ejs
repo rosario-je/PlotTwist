@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/story.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
 
 <!-- Internal Scripts -->
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -28,25 +29,25 @@
 </head>
 
 <body>
+  <%- include('../partials/_navbar'); %>
   <!-- Main story box -->
   <div class="mainstory">
-    <h1 class="maintitle">Far Away Castle</h1>
-    <p class= "story">Far away, nestled in the misty hills, stood the grand Far Away Castle. Its towering spires pierced the clouds, casting long shadows over the lush valleys below. Legends whispered tales of the castle's enchantments, of brave knights and fair maidens, and of mysteries waiting to be unraveled. One stormy night, as lightning danced across the sky and thunder echoed through the ancient halls, a lone traveler sought refuge within the castle's formidable walls. His name was Cedric, a weary adventurer with tales etched into the lines of his weathered face. Seeking shelter from the tempest, Cedric stumbled upon the castle's great oak doors, which creaked open with an eerie groan. Inside, he found himself in a grand hall adorned with tapestries depicting battles of old and chandeliers casting flickering light. But as Cedric ventured deeper into the castle's labyrinthine corridors, he discovered secrets hidden within its walls.
-    </p>
+    <h1 class="maintitle"><%=title%></h1>
+    <p class= "story"><%=content%></p>
     <div class="usercounter">
-      <div class="user">@Levi</div>
+      <div class="user">@<%=username%></div>
       <div class="likecounter">
-        <button id="like-button"><i class="fa-solid fa-heart heart"></i></button>
-        <span id="like-count">0</span>
+        <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
+        <span class="like-count">0</span>
       </div>
     </div>
   </div>
   <div class="navbuttons">
     <div class="storybuttons">
-      <button id=addstory>Add to Story</button>
-      <button id=viewadds>View Adds</button>
+      <button class=addstory>Add to Story</button>
+      <button class=viewadds>View Adds</button>
     </div>
-    <button id="next">Next Page</button>
+    <a href="<%=nextpageid%>" class="next">Next Page</a>
   </div>
 </body>
 

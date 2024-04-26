@@ -8,7 +8,9 @@ body {
 };
 
 .mainstory {
+  display: flex;
   width: 835px;
+  flex-direction: column;
   height: 550px;
   border-radius: 35px;
   font-family: 'Inter', serif;
@@ -17,6 +19,9 @@ body {
   background: #FFFFFF;
   padding-left: 85px;
   padding-right: 85px;
+  margin-top: 8em;
+  margin-bottom: 4em;
+  justify-content: space-between;
 };
 
 .usercounter{
@@ -44,6 +49,7 @@ body {
 }
 
 .maintitle {
+  text-align: center;
   font-family: 'Inter', serif;
   font-size: 48px;
   font-weight: 900;
@@ -51,8 +57,8 @@ body {
 
 .navbuttons {
   display: flex;
+  width: 835px;
   flex-direction: row;
-  align-items: space-between;
   justify-content: space-between;
 }
 
@@ -73,6 +79,7 @@ body {
   font-size: 20px;
   justify-content: center;
   align-items: center;
+  margin-right: 1em;
 }
 
 #viewadds{
