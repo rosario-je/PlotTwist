@@ -34,9 +34,11 @@
 
   <!-- Main story box -->
 
-  <div class="mainstory">
-    <h1 class="maintitle"><%=title%></h1>
-    <p class="story"><%=content%></p>
+  <article class="mainstory">
+    <div class="titlebody">
+      <h1 class="maintitle"><%=title%></h1>
+      <p class="story"><%=content%></p>
+    </div>
     <div class="usercounter">
       <div class="user">@<%=username%></div>
     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
@@ -46,7 +48,7 @@
       </div>
     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
     </div>
-  </div>
+  </article>
   <div class="navbuttons">
     <div class="storybuttons">
       <a href="/stories/<%=id%>/add"class=addstory>Add to Story</a>
