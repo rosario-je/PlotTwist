@@ -31,16 +31,20 @@
 
 <body>
   <%- include('../partials/_navbar'); %>
+
   <!-- Main story box -->
+
   <div class="mainstory">
     <h1 class="maintitle"><%=title%></h1>
     <p class="story"><%=content%></p>
     <div class="usercounter">
       <div class="user">@<%=username%></div>
+    <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
       <div class="likecounter">
         <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
         <span class="like-count">0</span>
       </div>
+    <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
     </div>
   </div>
   <div class="navbuttons">
@@ -48,23 +52,27 @@
       <a href="/stories/<%=id%>/add"class=addstory>Add to Story</a>
       <button id=viewadds>View Adds</button>
     </div>
+  <!--Should remove next page button if no next page-->
     <% if (nextpageid) { %>
     <a href="<%=nextpageid%>" class="next">Next Page</a>
     <% } %>
   </div>
 
    <!-- Contributions --> 
-
+   
+<!-- Hides contributions associated with story by default and loops through contributions array to display all contributions-->
   <section class="contributions hiddentext">
     <h2>Contributions</h2>
    <% for (let contribution of contributions) {%>
     <article>
       <address><%=contribution.username%></address>
       <p><%=contribution.content%></p>
+     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
       <div class="likecounter">
         <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
         <span class="like-count">0</span>
       </div>
+     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
     </article>
    <% } %>
   </section>
