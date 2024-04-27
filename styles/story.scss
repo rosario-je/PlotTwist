@@ -1,23 +1,48 @@
+// Variables //
+@import "variables";
+
+// Style sets //
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+};
+
+@mixin button {
+  display: flex;
+  height: 40px;
+  width: 170px;
+  background-color: $accent-color; 
+  border: none;
+  border-radius: 5px;
+  font-family: 'Inter', serif;
+  color: $contrast;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+};
+
+//Style Code for Stories//
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Inter', serif;
-  background: #DCD0D0
+  font-size: 18px;
+  color: $text-color;
+  background: $bg-color
 };
 
 .mainstory {
   justify-content: space-between;
-  display: flex;
-  width: 835px;
   flex-direction: column;
+  display: flex;
+  width: 850px;
   height: 550px;
   border-radius: 35px;
-  font-family: 'Inter', serif;
-  font-size: 18px;
   border: none;
-  background: #FFFFFF;
+  background: $contrast;
   padding-left: 85px;
   padding-right: 85px;
   margin-top: 8em;
@@ -25,97 +50,60 @@ body {
 };
 
 .usercounter{
-  display: flex;
-  flex-direction: row;
-  font-family: 'Inter', serif;
+  @include flex-row;
+  justify-content: space-between;
   font-size: 22px;
   font-weight: 500;
-  justify-content: space-between;
-  color: #BBBBBB;
+  color: $secondary-text;
   padding-bottom: 1.75em;
 }
 
 .likecounter{
-  display: flex;
-  flex-direction: row;
-  font-family: 'Inter', serif;
+  @include flex-row;
 }
 
 .like-button {
-  display: flex;
-  color: #D90429;
+  color: $primary-color;
   border: none;
-  background: #FFFFFF;
+  background: inherit;
   padding-right: 10px;
 }
 
 .maintitle {
   text-align: center;
-  font-family: 'Inter', serif;
   font-size: 48px;
   font-weight: 900;
   padding-bottom: 1em;
 }
 
 .navbuttons {
-  display: flex;
-  width: 835px;
-  flex-direction: row;
+  @include flex-row;
+  width: 850px;
   justify-content: space-between;
-  text-decoration: none;
 }
 
 .storybuttons {
-  display: flex;
-  flex-direction: row;
+  @include flex-row;
 }
 
 .addstory {
-  display: flex;
-  height: 40px;
-  width: 170px;
-  background-color: #201F33; 
-  border: none;
-  border-radius: 5px;
-  font-family: 'Inter', serif;
-  color:#FFFFFF;
-  font-size: 20px;
-  justify-content: center;
-  align-items: center;
+  @include button;
   margin-right: 1em;
 }
 
 #viewadds{
-  display: flex;
-  height: 40px;
-  width: 170px;
-  background-color: #201F33; 
-  border: none;
-  border-radius: 5px;
-  font-family: 'Inter', serif;
-  color:#FFFFFF;
-  font-size: 20px;
-  justify-content: center;
-  align-items: center;
+  @include button;
 }
 
 .next {
-  display: flex;
-  height: 40px;
-  width: 170px;
-  background-color: #201F33; 
-  border: none;
-  border-radius: 5px;
-  font-family: 'Inter', serif;
-  color:#FFFFFF;
-  font-size: 20px;
-  justify-content: center;
-  align-items: center;
+  @include button;
 }
 
 .hiddentext {
   display: none;
 }
+
+// Remove underline on links //
 
 a:link { 
   text-decoration: none; 
