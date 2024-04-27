@@ -64,17 +64,19 @@
    
 <!-- Hides contributions associated with story by default and loops through contributions array to display all contributions-->
   <section class="contributions hiddentext">
-    <h2>Contributions</h2>
+    <h2 class="subheader">Contributions</h2>
    <% for (let contribution of contributions) {%>
-    <article>
-      <address><%=contribution.username%></address>
-      <p><%=contribution.content%></p>
+    <article class="maincontribution">
+      <p class="contributionstory" ><%=contribution.content%></p>
+      <section class="usercounter">
+        <section class="user">@<%=contribution.username%></section>
      <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
-      <div class="likecounter">
-        <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
-        <span class="like-count">0</span>
-      </div>
+          <div class="likecounter">
+          <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
+          <span class="like-count">0</span>
+        </div>
      <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
+      </section>
     </article>
    <% } %>
   </section>

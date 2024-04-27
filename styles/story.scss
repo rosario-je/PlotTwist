@@ -34,6 +34,13 @@ body {
   background: $bg-color
 };
 
+.maintitle {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  padding-bottom: 1em;
+}
+
 .mainstory {
   justify-content: space-between;
   flex-direction: column;
@@ -67,13 +74,6 @@ body {
   border: none;
   background: inherit;
   padding-right: 10px;
-}
-
-.maintitle {
-  text-align: center;
-  font-size: 48px;
-  font-weight: 900;
-  padding-bottom: 1em;
 }
 
 .navbuttons {
@@ -116,4 +116,33 @@ a:hover {
 } 
 a:active { 
   text-decoration: none; 
+}
+
+// Contribution Specific //
+
+.subheader {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  margin-top: 2em;
+}
+
+.maincontribution {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  width: 850px;
+  height: 325px;
+  border-radius: 35px;
+  border: none;
+  background: $contrast;
+  padding-top: 1em;
+  padding-left: 85px;
+  padding-right: 85px;
+  margin-top: 4em;
+  margin-bottom: 4em;
+};
+
+.contributionstory {
+  padding-bottom: 1em;
 }
