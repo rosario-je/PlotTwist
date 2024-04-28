@@ -5,6 +5,6 @@ CREATE TABLE stories (
   contribution_id INTEGER REFERENCES contributions(id) ON DELETE CASCADE,
   title VARCHAR (72) NOT NULL,
   content TEXT NOT NULL, 
-  created_date DATETIME,
+  created_date DATE,
   is_complete BOOLEAN NOT NULL DEFAULT FALSE 
 );
