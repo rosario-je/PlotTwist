@@ -1,6 +1,6 @@
 @import "variables";
 
-nav {
+.navbar {
   display: flex;
   padding: 5px 5%;
   justify-content: space-between;
@@ -10,26 +10,31 @@ nav {
   top: 0;
   z-index: 1;
   width: 100vw;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   background-color: $accent-color;
-  h1 {
+
+  .navbar-brand {
     color: $primary-color;
+    font-weight: 900;
   }
 
-  ul {
+  .navbar-nav {
     list-style: none;
     display: flex;
-    li {
+
+    .nav-item {
       margin-left: 1.5rem;
-      a {
+
+      .nav-link {
         text-decoration: none;
         color: $primary-color;
-        font-size: 95%;
+        font-size: 1rem;
+        font-style: normal;
         font-weight: 400;
         padding: 4px 8px;
         border-radius: 5px;
-        a:hover {
+
+        &:hover {
           background-color: #f5f5f5;
         }
       }
@@ -37,4 +42,6 @@ nav {
   }
 }
 
-
+.navbar.navbar-expand-lg.navbar-dark.bg-body-tertiary {
+  background-color: $accent-color;
+}

@@ -1,0 +1,79 @@
+@import "variables.scss";
+
+body {
+  overflow: hidden;
+}
+
+#login_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  gap: 100px;
+  border-bottom: solid black 1px;
+  margin-top: 70px;
+}
+
+/*--------------- Left Container Styles--------------- */
+.login_container_left {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-color;
+  padding-left: 100px;
+  padding-right: 100px;
+  h1 {
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 600px;
+  h1 {
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 50px;
+  }
+  label {
+    font-size: 1.25rem;
+
+    font-weight: 400;
+  }
+  .passwordInput {
+    padding-bottom: 25px;
+  }
+  .emailInput {
+    padding-bottom: 25px;
+  }
+  button {
+    align-content: center;
+    padding: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  input {
+    padding: 15px;
+  }
+}
+
+.login_container_right {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+}
