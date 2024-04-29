@@ -1,6 +1,18 @@
 // Variables //
 @import "variables";
 
+.main_story_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', serif;
+  font-size: 18px;
+  width: 80%;
+  float: right;
+}
+
+
 // Style sets //
 @mixin flex-row {
   display: flex;
@@ -88,16 +100,7 @@
  
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Inter', serif;
-  font-size: 18px;
-  color: $text-color;
-  background: $bg-color
-};
+
 
 .maintitle {
   text-align: left;
