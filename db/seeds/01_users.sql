@@ -22,3 +22,8 @@ INSERT INTO users (
   username, email, password, user_icon) 
   VALUES (
     'tayiodog', 'tayio@dog', 'password5', 'dog2.png');
+
+INSERT INTO users (
+  username, email, password, user_icon) 
+  VALUES (
+    'lolakitty', 'lola@kitty', 'password5', 'cat.png');

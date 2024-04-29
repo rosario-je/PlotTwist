@@ -21,4 +21,14 @@ INSERT INTO contributions (
 INSERT INTO contributions (
   user_id, story_id, content, is_approved, submission_date, upvote_count)
   VALUES (
-  2, 3, "Finally, after many adventures, they reached the heart of the enchanted lands, where a great evil threatened to consume everything in its path. With the wisdom of Orion and the bravery of Elara, they confronted the darkness and banished it from the realm forever. As the sun set on their final victory, Elara realized that her true strength lay not in magic or power, but in her kindness and compassion. And so, with the knowledge gained from her journey, she returned home to her village, where she continued to inspire others with tales of her adventures in the enchanted lands beyond the tree.", is_approved,  2024-04-26 06:00:00, upvote_count);
+  6, 3, "Finally, after many adventures, they reached the heart of the enchanted lands, where a great evil threatened to consume everything in its path. With the wisdom of Orion and the bravery of Elara, they confronted the darkness and banished it from the realm forever. As the sun set on their final victory, Elara realized that her true strength lay not in magic or power, but in her kindness and compassion. And so, with the knowledge gained from her journey, she returned home to her village, where she continued to inspire others with tales of her adventures in the enchanted lands beyond the tree.", is_approved,  2024-04-26 06:00:00, upvote_count);
+
+INSERT INTO contributions (
+  user_id, story_id, content, is_approved, submission_date, upvote_count)
+  VALUES (
+  5, 4, "As seasons passed, the garden bloomed into a sanctuary, where laughter echoed and friendships blossomed. Emily's tree stood tall, a symbol of resilience and unity. Together, they weathered storms and celebrated victories, weaving stories into its branches. Their urban oasis became a beacon of hope, reminding all that even in the concrete jungle, beauty and connection thrive.", is_approved,  2024-03-16 21:00:00, upvote_count);
+
+INSERT INTO contributions (
+  user_id, story_id, content, is_approved, submission_date, upvote_count)
+  VALUES (
+    4, 4, "As the community flourished, so did Emily's own spirit. She found purpose in nurturing both plants and people, discovering the profound impact of simple acts of kindness. Through the garden, she forged bonds that transcended barriers of age, culture, and background. And in the shade of her tree, amid laughter and shared dreams, Emily realized that the true essence of life lay in cultivating love and connection.", is_approved, 2024-04-01 18:00:11, upvote_count);
