@@ -4,5 +4,5 @@ CREATE TABLE users (
   username VARCHAR(32) NOT NULL,
   email VARCHAR(32) NOT NULL,
   password VARCHAR(32) NOT NULL,
-  user_icon VARCHAR (255),
+  user_icon VARCHAR (255)
 );

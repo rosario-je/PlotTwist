@@ -1,16 +1,31 @@
 const express = require('express');
 const router  = express.Router();
+const { getStories } = require('../db/queries/stories')
 
 // Route for all stories feed  
 
 router.get('/', (req, res) => {
-  const templatevars = {
-    id: req.params.id,
-    title: "Far Away Castle",
-    content: "Far away, nestled in the misty hills, stood the grand Far Away Castle. Its towering spires pierced the clouds, casting long shadows over the lush valleys below. Legends whispered tales of the castle's enchantments, of brave knights and fair maidens, and of mysteries waiting to be unraveled. One stormy night, as lightning danced across the sky and thunder echoed through the ancient halls, a lone traveler sought refuge within the castle's formidable walls.",
-    username: "Levi", 
-  }
-  res.render('stories/index', templatevars);
+  // const stories = [
+  //   {
+  //     id: 1,
+  //     content: "Story 1",
+  //   },
+  //   {
+  //     id: 1,
+  //     content: "Story 1",
+  //   },
+  //   {
+  //     id: 1,
+  //     content: "Story 1",
+  //   }
+  // ]
+  getStories()
+  .then(stories => {
+    const templatevars = {
+      stories 
+    }
+    res.render('stories/index', templatevars);
+  });
 }); 
 
 // Get path for each story by ID
