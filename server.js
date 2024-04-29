@@ -27,29 +27,43 @@ app.use(
 app.use(express.static('public'));
 
 // Separated Routes for each Resource
+
+// EXAMPLES
+
 // Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
-const usersRoutes = require('./routes/users');
+//const userApiRoutes = require('./routes/users-api');
+//const widgetApiRoutes = require('./routes/widgets-api');
+//const usersRoutes = require('./routes/users');
 
 const landingRoute = require('./routes/landing');
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register')
+const storyRoutes = require('./routes/stories');
+const newstoryRoute = require('./routes/newstory');
+const userstoriesRoute = require('./routes/userstories');
+const usercontrRoute = require('./routes/usercontr');
 
 const userProfileRoute = require('./routes/user_profile')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
-app.use('/users', usersRoutes);
+
+// EXAMPLES
+
+//app.use('/api/users', userApiRoutes);
+//app.use('/api/widgets', widgetApiRoutes);
+//app.use('/users', usersRoutes);
 
 app.use('/landing', landingRoute)
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
 app.use('/user_profile', userProfileRoute);
 
+app.use('/stories', storyRoutes)
+app.use('/newstory', newstoryRoute)
+app.use('/userstories', userstoriesRoute)
+app.use('/usercontr', usercontrRoute)
 // Note: mount other resources here, using the same pattern above
 
 // Home page

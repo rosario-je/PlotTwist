@@ -1,0 +1,176 @@
+/* PAGE ARCHITECTURE */
+
+body {
+  display: flex;
+}
+
+.left-content {
+  flex: 0 0 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vertical-line {
+  width: 1px;
+  background-color: black;
+  height: 100vh;
+}
+
+
+/* LEFT SIDE CONTENT */
+
+.icon {
+  color:#D90429;
+  margin-right: 10px;
+}
+
+.left-content ul {
+  margin-top: 100px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-content li {
+  margin-bottom: 50px;
+}
+
+.left-content button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #201F33;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.left-content button:hover {
+  text-decoration: underline;
+}
+
+.left-content button.active {
+  font-weight: bold;
+}
+
+
+/* RIGHT SIDE CONTENT */
+
+
+/* Avatar and dividing line */
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.avatar-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 10px solid white;
+}
+
+.black_line {
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  margin-top: 110px;
+}
+
+/* Horizontal button selection */
+.horiz-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.horiz-selection button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  color: #201F33;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 100px;
+}
+
+.horiz-selection button:hover {
+  text-decoration: underline;
+}
+
+.horiz-selection button.active {
+  font-weight: bold;
+}
+
+.black_line2 {
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  margin-top: 15px;
+}
+
+
+
+/* Contributions Card */
+.contributions-card {
+  width: 50%;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 30px;
+}
+
+/* Contribution Avatar, User Name & timestamp */
+.avatar-container2 {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-container2 img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-details h2 {
+  margin: 0;
+}
+
+.timestamp {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Contribution Details */
+.contribution-title {
+  font-size: 28px;
+}
+
+.story-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.contribution-details {
+  margin-top: 20px;
+}
+
+.divider {
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}

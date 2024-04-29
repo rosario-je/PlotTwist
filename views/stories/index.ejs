@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+<!-- External Styles (text/icons) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+<!-- Internal Styles -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/storyindex.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+
+<!-- Internal Scripts -->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+
+</head>
+
+<body>
+  <%- include('../partials/_navbar'); %>
+
+  <!-- Main story box -->
+
+  <article class="mainstory">
+    <section class="usernameusericon">
+      <img class="usericon" src="/docs/icons/rabbit.png" alt="">
+      <div class="userposttime">
+        <h2 class="user">@<%=username%></h2>
+        <text class="posttime">1 hour ago</text>
+      </div>
+    </section>
+    <section class="titlebody">
+      <h1 class="maintitle"><%=title%></h1>
+      <p class="story"><%=content%></p>
+    </section>
+    <section class="counterbuttons">
+      <div class="likecounter">
+        <i class="fa-solid fa-heart like-button"></i>
+        <div class="like-count">10</div>
+      </div>
+      <div class="buttons">
+        <a href class="readbutton">Read More</a>
+        <a href class="contributebutton">Contribute</a>
+      </div>
+    </section>
+  </article>
+</body>
+</html>
