@@ -43,6 +43,8 @@ const newstoryRoute = require('./routes/newstory');
 const userstoriesRoute = require('./routes/userstories');
 const usercontrRoute = require('./routes/usercontr');
 
+const userProfileRoute = require('./routes/user_profile')
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -56,6 +58,7 @@ const usercontrRoute = require('./routes/usercontr');
 app.use('/landing', landingRoute)
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
+app.use('/user_profile', userProfileRoute);
 
 app.use('/stories', storyRoutes)
 app.use('/newstory', newstoryRoute)

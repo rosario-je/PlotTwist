@@ -1,0 +1,33 @@
+.user_menu {
+  position: fixed;
+  height: 100%;
+  width: 20%; 
+  margin-top: 70px;
+  padding: 5px 6%;
+  border-right: 1px solid #b2a1a1;
+  padding-top: 100px;
+  z-index: 1000; 
+}
+
+.user_menu ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.user_menu ul li {
+  display: flex;
+  gap: 15px;
+  width: 100%; 
+  padding-bottom: 35px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.user_menu ul li a {
+  text-decoration: none;
+  color: black;
+}

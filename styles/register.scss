@@ -66,10 +66,16 @@ body {
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
+    background-color: $accent-color;
+    
   }
   input {
     padding: 15px;
   }
+}
+
+.btn-primary:hover {
+  background-color: $primary-color;
 }
 
 .register_container_right {
@@ -80,3 +86,4 @@ body {
   align-content: center;
   align-items: center;
 }
+
