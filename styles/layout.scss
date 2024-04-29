@@ -1,5 +1,21 @@
 // See: https://sass-lang.com/
 @import 'variables';
+
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: $secondary-color;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $primary-color;    /* color of the scroll thumb */
+  border-radius: 5px;       /* roundness of the scroll thumb */
+  border: 3px solid black;  /* creates padding around scroll thumb */
+}
+
+
 body {
   margin: 0 auto;
   background-color: $bg-color;

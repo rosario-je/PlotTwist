@@ -2,7 +2,9 @@ $bg-color: #DCD0D0;
 $text-color: #2B2D42;
 $primary-color: #D90429;
 $secondary-color: #8D99AE;
+$secondary-text: #BBBBBB;
 $accent-color: #201F33;
+$contrast: #FFFFFF;
 
 
 
@@ -12,4 +14,6 @@ export {
   $primary-color: $primary-color;
   $secondary-color: $secondary-color;
   $accent-color: $accent-color;
+  $contrast: $contrast;
+  $secondary-text: $secondary-text;
 }
