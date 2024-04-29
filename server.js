@@ -36,6 +36,8 @@ app.use(express.static('public'));
 //const usersRoutes = require('./routes/users');
 
 const landingRoute = require('./routes/landing');
+const loginRoute = require('./routes/login');
+const registerRoute = require('./routes/register')
 const storyRoutes = require('./routes/stories');
 
 // Mount all resource routes
@@ -49,6 +51,9 @@ const storyRoutes = require('./routes/stories');
 //app.use('/users', usersRoutes);
 
 app.use('/landing', landingRoute)
+app.use('/login', loginRoute);
+app.use('/register', registerRoute);
+
 app.use('/stories', storyRoutes)
 // Note: mount other resources here, using the same pattern above
 
