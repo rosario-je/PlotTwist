@@ -36,6 +36,8 @@ const landingRoute = require('./routes/landing');
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register')
 
+const userProfileRoute = require('./routes/user_profile')
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -46,6 +48,7 @@ app.use('/users', usersRoutes);
 app.use('/landing', landingRoute)
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
+app.use('/user_profile', userProfileRoute);
 
 // Note: mount other resources here, using the same pattern above
 
