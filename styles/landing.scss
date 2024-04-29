@@ -43,17 +43,6 @@
     justify-content: start;
     gap: 50px;
   }
-  button {
-    background-color: $accent-color;
-    color: white;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    width: 175px;
-    height: 45px;
-    border-radius: 5px;
-  }
 }
 
 .container {
@@ -163,17 +152,6 @@
       justify-content: center;
       gap: 50px;
     }
-    button {
-      background-color: $accent-color;
-      color: white;
-      font-size: 1.25rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      width: 175px;
-      height: 45px;
-      border-radius: 5px;
-    }
     #devices_image_container {
       padding-top: 50px;
       padding-left: 100px;
@@ -208,4 +186,24 @@ footer {
 
 .footer_info {
   color: white;
+}
+
+// Buttons
+
+button {
+  background-color: $accent-color;
+  color: white;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 175px;
+  height: 45px;
+  border-radius: 5px;
+}
+.signin_button:hover {
+  background-color: $primary-color;
+}
+.signup_button:hover {
+  background-color: $primary-color;
 }
