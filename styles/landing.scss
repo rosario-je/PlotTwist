@@ -8,9 +8,7 @@
   overflow: hidden;
   height: 100vh;
   min-height: 60vh;
-  gap: 100px;
   border-bottom: solid black 1px;
-  margin-top: 70px;
 
   h1 {
     color: $primary-color;
@@ -38,6 +36,9 @@
     margin: 0px;
     padding-bottom: 35px;
   }
+  .right_container_section1 p {
+    width: 50%;
+  }
   .button_container {
     display: flex;
     justify-content: start;
@@ -54,10 +55,12 @@
 /*--------------- Left Container Styles ---------------*/
 .left_container_section1 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 5px 5%;
+  height: 100vh;
+  width: 50%;
 }
 
 /*--------------- Right Container Styles--------------- */
@@ -66,24 +69,24 @@
   flex-direction: column;
 
   height: 100vh;
+  width: 50%;
   justify-content: center;
   align-items: center;
   background-color: $secondary-color;
-  padding-left: 100px;
-  padding-right: 100px;
+
 }
 
-.image1,
-.image2 {
+.image1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   p {
+    padding-top: 20px;
     text-align: center;
   }
   img {
-    width: 70%;
-    height: auto;
+    width: auto;
+    height: 300px;
   }
 }
 /*--------------- Section 2 Story Previews ---------------*/

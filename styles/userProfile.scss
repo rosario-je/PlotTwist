@@ -1,0 +1,63 @@
+@import "variables";
+
+#user_profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  float: right;
+  margin-top: 70px;
+  padding-top: 150px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $accent-color;
+
+  .user_profile_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 250px;
+      height: 250px;
+      border: 10px solid $accent-color;
+      border-radius: 50%;
+    }
+    h1 {
+      padding-top: 20px;
+    }
+  }
+
+  .user_profile_info {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-top: 10px;
+
+    .user_profile_info_registerDate,
+    .user_profile_info_email {
+      i {
+        width: 30px;
+        height: 30px;
+      }
+      h3 {
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+
+#recent_posts {
+  width: 80%;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  padding-left: 170px;
+  padding-right: 170px;
+}
