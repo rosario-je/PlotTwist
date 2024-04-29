@@ -1,24 +1,12 @@
 const express = require('express');
 const router  = express.Router();
-const { getStories } = require('../db/queries/stories')
+const { getStories, getStoryById } = require('../db/queries/stories');
+const { getContributionsByStoryId } = require('../db/queries/contributions');
 
 // Route for all stories feed  
 
 router.get('/', (req, res) => {
-  // const stories = [
-  //   {
-  //     id: 1,
-  //     content: "Story 1",
-  //   },
-  //   {
-  //     id: 1,
-  //     content: "Story 1",
-  //   },
-  //   {
-  //     id: 1,
-  //     content: "Story 1",
-  //   }
-  // ]
+
   getStories()
   .then(stories => {
     const templatevars = {
@@ -33,27 +21,17 @@ router.get('/', (req, res) => {
 // Temporary hardcoded Templatevars
 
 router.get('/:id', (req, res) => {
-  const templatevars = {
-    id: req.params.id,
-    title: "Far Away Castle",
-    content: "Far away, nestled in the misty hills, stood the grand Far Away Castle. Its towering spires pierced the clouds, casting long shadows over the lush valleys below. Legends whispered tales of the castle's enchantments, of brave knights and fair maidens, and of mysteries waiting to be unraveled. One stormy night, as lightning danced across the sky and thunder echoed through the ancient halls, a lone traveler sought refuge within the castle's formidable walls.",
-    username: "Levi", 
-    nextpageid: 'abc123',
-    // nextpageid should be the id of the next contribution in the database of this story
+  Promise.all ([
+    getStoryById(req.params.id),
+    getContributionsByStoryId(req.params.id) 
+  ])
+  .then(results => {
+    const [story, contributions] = results
+    
+  const templatevars = {story, contributions}
 
-// Temporary hard coded contributions to be changed
-    contributions: [
-      {
-        content: "His name was Cedric, a weary adventurer with tales etched into the lines of his weathered face. Seeking shelter from the tempest, Cedric stumbled upon the castle's great oak doors, which creaked open with an eerie groan. Inside, he found himself in a grand hall adorned with tapestries depicting battles of old and chandeliers casting flickering light. But as Cedric ventured deeper into the castle's labyrinthine corridors, he discovered secrets hidden within its walls.",
-        username: "Laurel"
-      },
-      {
-        content: "His name was Cedric, a weary adventurer with tales etched into the lines of his weathered face. Seeking shelter from the tempest, Cedric stumbled upon the castle's great oak doors, which creaked open with an eerie groan. Inside, he found himself in a grand hall adorned with tapestries depicting battles of old and chandeliers casting flickering light. But as Cedric ventured deeper into the castle's labyrinthine corridors, he discovered secrets hidden within its walls.",
-        username: "Dexter"
-      }
-    ]
-  }
   res.render('stories/show', templatevars);
+  })
 }); 
 
 module.exports = router;

@@ -36,28 +36,24 @@
 
   <article class="mainstory">
     <section class="titlebody">
-      <h1 class="maintitle"><%=title%></h1>
-      <p class="story"><%=content%></p>
+      <h1 class="maintitle"><%=story.title%></h1>
+      <p class="story"><%=story.content%></p>
     </section>
     <section class="usercounter">
-      <section class="user">@<%=username%></section>
+      <section class="user">@<%=story.username%></section>
     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
       <div class="likecounter">
         <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
-        <div class="like-count">0</div>
+        <div class="like-count"><%=story.upvote_count%></div>
       </div>
     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
     </section>
   </article>
   <div class="navbuttons">
     <div class="storybuttons">
-      <a href="/stories/<%=id%>/add"class=addstory>Add to Story</a>
+      <a href="/stories/<%=story.id%>/add"class=addstory>Add to Story</a>
       <button id=viewadds>View Adds</button>
     </div>
-  <!--Should remove next page button if no next page-->
-    <% if (nextpageid) { %>
-    <a href="<%=nextpageid%>" class="next">Next Page</a>
-    <% } %>
   </div>
 
    <!-- Contributions --> 
