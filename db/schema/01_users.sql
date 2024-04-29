@@ -5,6 +5,4 @@ CREATE TABLE users (
   email VARCHAR(32) NOT NULL,
   password VARCHAR(32) NOT NULL,
   user_icon VARCHAR (255),
-  story_id INTEGER REFERENCES stories(id) ON DELETE CASCADE,
-  contribution_id INTEGER REFERENCES contributions(id) ON DELETE CASCADE,
 );

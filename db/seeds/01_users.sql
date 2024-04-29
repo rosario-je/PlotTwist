@@ -1,24 +1,24 @@
 INSERT INTO users (
-  username, email, password, user_icon, story_id, contribution_id) 
+  username, email, password, user_icon) 
   VALUES (
-    'levibunny', 'levi@bunny', 'password1', 'rabbit.png', <story_id>, <contribution_id>);
+    'levibunny', 'levi@bunny', 'password1', 'rabbit.png');
 
 INSERT INTO users (
-  username, email, password, user_icon, story_id, contribution_id) 
+  username, email, password, user_icon) 
   VALUES (
-    'laurelbunny', 'laurel@bunny', 'password2', 'rabbit2.png', <story_id>, <contribution_id>);
+    'laurelbunny', 'laurel@bunny', 'password2', 'rabbit2.png');
 
 INSERT INTO users (
-  username, email, password, user_icon, story_id, contribution_id) 
+  username, email, password, user_icon) 
   VALUES (
-    'dexterkitty', 'dexter@kitty', 'password3', 'cat.png', <story_id>, <contribution_id>);
+    'dexterkitty', 'dexter@kitty', 'password3', 'cat.png');
 
 INSERT INTO users (
-  username, email, password, user_icon, story_id, contribution_id) 
+  username, email, password, user_icon) 
   VALUES (
-    'bobbydog', 'bobby@dog', 'password4', 'dog1.png', <story_id>, <contribution_id>);
+    'bobbydog', 'bobby@dog', 'password4', 'dog1.png');
 
 INSERT INTO users (
-  username, email, password, user_icon, story_id, contribution_id) 
+  username, email, password, user_icon) 
   VALUES (
-    'patchesAC', 'patches@ac', 'password5', 'dog2.png', <story_id>, <contribution_id>);
+    'tayiodog', 'tayio@dog', 'password5', 'dog2.png');

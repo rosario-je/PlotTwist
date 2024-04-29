@@ -6,5 +6,6 @@ CREATE TABLE stories (
   title VARCHAR (72) NOT NULL,
   content TEXT NOT NULL, 
   created_date DATE,
-  is_complete BOOLEAN NOT NULL DEFAULT FALSE 
+  is_complete BOOLEAN NOT NULL DEFAULT FALSE,
+  upvote_count INTEGER
 );
