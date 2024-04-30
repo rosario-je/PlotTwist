@@ -40,6 +40,7 @@
       <p class="story"><%=story.content%></p>
     </section>
     <section class="usercounter">
+      <img class="usericon" src="/docs/icons/<%=story.user_icon%>" alt="">
       <section class="user">@<%=story.username%></section>
     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
       <div class="likecounter">
@@ -65,6 +66,7 @@
     <article class="maincontribution">
       <p class="contributionstory" ><%=contribution.content%></p>
       <section class="usercounter">
+        <img class="usericon" src="/docs/icons/<%=contribution.user_icon%>" alt="">
         <section class="user">@<%=contribution.username%></section>
      <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
           <div class="likecounter">

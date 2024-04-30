@@ -7,12 +7,4 @@ const getUsers = () => {
     });
 };
 
-const getStory = () => {
-  return db.query(
-    'SELECT * FROM stories ORDER BY created_date;')
-    .then(data => {
-      return data.rows;
-    });
-}
-
 module.exports = { getUsers };

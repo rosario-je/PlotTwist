@@ -16,9 +16,7 @@ router.get('/', (req, res) => {
   });
 }); 
 
-// Get path for each story by ID
-// Move between each seperate contribution in a story with 'nextpageid', should increment 1, 2, 3, 4
-// Temporary hardcoded Templatevars
+// Route for each story by ID with contributions
 
 router.get('/:id', (req, res) => {
   Promise.all ([
@@ -27,7 +25,7 @@ router.get('/:id', (req, res) => {
   ])
   .then(results => {
     const [story, contributions] = results
-    
+
   const templatevars = {story, contributions}
 
   res.render('stories/show', templatevars);

@@ -1,6 +1,7 @@
 const db = require('../connection');
 
 // CRUD 
+
 // Create
 // Read All stories
 const getStories = () => {
@@ -14,7 +15,7 @@ const getStories = () => {
 // Read One story
 const getStoryById = (id) => {
   return db.query(
-    `SELECT stories.*, users.username FROM stories
+    `SELECT stories.*, users.username, users.user_icon FROM stories
      JOIN users ON users.id = user_id 
      WHERE stories.id = $1;`, [id])
     .then(data => {
@@ -22,6 +23,6 @@ const getStoryById = (id) => {
     });
 }
 // Update story
-// Delete story
+
 
 module.exports = { getStories, getStoryById };

@@ -26,4 +26,4 @@ INSERT INTO users (
 INSERT INTO users (
   username, email, password, user_icon) 
   VALUES (
-    'lolakitty', 'lola@kitty', 'password5', 'cat.png');
+    'lolakitty', 'lola@kitty', 'password5', 'cat2.png');
