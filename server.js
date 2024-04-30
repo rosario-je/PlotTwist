@@ -54,6 +54,7 @@ const storyRoutes = require('./routes/stories');
 
 
 const userProfileRoute = require('./routes/user_profile')
+const addToStoryRoute = require('./routes/add_to_story')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -71,6 +72,7 @@ app.use('/register', registerRoute);
 app.use('/user', userProfileRoute);
 
 app.use('/stories', storyRoutes)
+app.use('/add_to_story', addToStoryRoute)
 
 // Note: mount other resources here, using the same pattern above
 
