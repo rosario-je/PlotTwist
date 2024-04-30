@@ -5,7 +5,7 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
-const cookieSession = require('cookie-session');
+const cookieParser = require('cookie-parser');
 // const bcrypt = require("bcryptjs");
 
 const PORT = process.env.PORT || 8080;
@@ -16,6 +16,7 @@ app.set('view engine', 'ejs');
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
+app.use(cookieParser());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(
@@ -27,14 +28,6 @@ app.use(
   })
 );
 app.use(express.static('public'));
-//Middleware to parse cookies
-app.use(cookieSession({
-  name: 'session',
-  secret: 'secretCookie',
-
-  // Cookie Options
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}));
 
 // Separated Routes for each Resource
 
@@ -83,6 +76,12 @@ app.use('/add_to_story', addToStoryRoute)
 //Default home page view
 app.get('/', (req, res) => {
   res.redirect('landing');
+});
+
+//Default user login
+app.get('/login/:id', (req, res) => {
+  res.cookie('user_id', req.params.id);
+  res.redirect('/user');
 });
 
 app.listen(PORT, () => {

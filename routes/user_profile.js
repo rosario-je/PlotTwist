@@ -1,8 +1,20 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const router  = express.Router();
+const { getUserById } = require('../db/queries/users');
 
+//Route for specific logged in user profile
 router.get('/', (req, res) => {
-  res.render('user_profile');
+  let id = req.cookies["user_id"]
+  console.log(id)
+  getUserById(id)
+  .then(users => {
+    let user = users[0];
+    const templatevars = {
+      user
+    }
+    res.render('user_profile', templatevars);
+  });
 }); 
 
 //Route for user contributions
