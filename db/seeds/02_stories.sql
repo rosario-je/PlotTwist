@@ -23,4 +23,4 @@ user_id, title, content, created_date, upvote_count)
 INSERT INTO stories (
 user_id, title, content, created_date)
   VALUES (
-  4, "The Last Transmission", "In the year 2050, Earth stood on the precipice of a new era. Humanity had conquered the stars, colonizing distant planets and moons. Yet, amidst the vast expanse of space, there remained one place untouched by human presence: Proxima Centauri, the nearest star system to our own.", '2024-04-30')
+  4, 'The Last Transmission', 'In the year 2050, Earth stood on the precipice of a new era. Humanity had conquered the stars, colonizing distant planets and moons. Yet, amidst the vast expanse of space, there remained one place untouched by human presence: Proxima Centauri, the nearest star system to our own.', '2024-04-30')
