@@ -34,24 +34,24 @@
       <h1 class="maintitle"><%=story.title%></h1>
       <p class="story"><%=story.content%></p>
     </section>
-    <section class="usercounter">
-      <img class="usericon" src="/docs/icons/<%=story.user_icon%>" alt="">
-      <section class="user">@<%=story.username%></section>
+    <footer class="postfooter">
+      <section class="usercounter">
+        <img class="usericon" src="/docs/icons/<%=story.user_icon%>" alt="">
+        <section class="user">@<%=story.username%></section>
     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
-      <div class="likecounter">
-        <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
-        <div class="like-count"><%=story.upvote_count%></div>
-      </div>
+        <div class="likecounter">
+          <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
+          <div class="like-count"><%=story.upvote_count%></div>
+        </div>
     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
-    </section>
+      </section>
+    </footer>
   </article>
   <% if (story.is_complete != true) { %>
-  <div class="navbuttons">
     <div class="storybuttons">
       <a href="/stories/<%=story.id%>/add"class=addstory>Add to Story</a>
       <button id=viewadds>View Adds</button>
     </div>
-  </div>
   <% } %>
 </section>
 

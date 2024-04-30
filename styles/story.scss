@@ -90,19 +90,15 @@
   padding-right: 10px;
 }
 
-.navbuttons {
-  @include flex-row;
-  width: 850px;
-  justify-content: space-between;
-}
-
 .storybuttons {
   @include flex-row;
+  width: 850px;
 }
 
 .addstory {
   @include button;
   margin-right: 1em;
+  margin-left: 1em;
 }
 
 #viewadds{
@@ -164,4 +160,5 @@ a:active {
 
 .contributionstory {
   padding-bottom: 1em;
+  padding-top: 1em;
 }
