@@ -1,3 +1,5 @@
+/* USE SINGLE QUOTES ONLY */
+
 INSERT INTO users (
   username, email, password, user_icon) 
   VALUES (

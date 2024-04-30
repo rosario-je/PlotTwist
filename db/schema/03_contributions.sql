@@ -6,5 +6,5 @@ CREATE TABLE contributions (
   content TEXT NOT NULL,
   is_approved BOOLEAN NOT NULL DEFAULT FALSE,
   submission_date DATE,
-  upvote_count INTEGER
+  upvote_count INTEGER DEFAULT 0
 );

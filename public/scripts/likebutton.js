@@ -4,8 +4,9 @@
 const likeButtons = document.getElementsByClassName('like-button');
 for (const likeButton of likeButtons) {
   let likeCount = 0;
-  likeButton.addEventListener('click', () => {
+  likeButton.addEventListener('click', function() {
     const likeCountElement = likeButton.nextElementSibling;
+    likeCount = Number(likeCountElement.innerText);
     likeCount++;
     likeCountElement.innerText = likeCount;
   });

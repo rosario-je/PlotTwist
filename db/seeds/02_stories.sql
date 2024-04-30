@@ -1,7 +1,9 @@
+/* USE SINGLE QUOTES ONLY */
+
 INSERT INTO stories (
 user_id, title, content, created_date, upvote_count)
   VALUES (
-  1, 'Far Away Castle', 'Far away, nestled in the misty hills, stood the grand Far Away Castle. Its towering spires pierced the clouds, casting long shadows over the lush valleys below. Legends whispered tales of the castles enchantments, of brave knights and fair maidens, and of mysteries waiting to be unraveled. One stormy night, as lightning danced across the sky and thunder echoed through the ancient halls, a lone traveler sought refuge within the castles formidable walls.', '2024-01-28', 0);
+  1, 'Far Away Castle', 'Far away, nestled in the misty hills, stood the grand Far Away Castle. Its towering spires pierced the clouds, casting long shadows over the lush valleys below. Legends whispered tales of the castles enchantments, of brave knights and fair maidens, and of mysteries waiting to be unraveled. One stormy night, as lightning danced across the sky and thunder echoed through the ancient halls, a lone traveler sought refuge within the castles formidable walls.', '2024-01-28', 790);
 
 INSERT INTO stories (
 user_id, title, content, created_date, is_complete, upvote_count)
@@ -11,9 +13,14 @@ user_id, title, content, created_date, is_complete, upvote_count)
 INSERT INTO stories (
 user_id, title, content, created_date, upvote_count)
   VALUES (
-  5, 'Once upon a time', 'Once upon a time, in a quaint village nestled between rolling hills, there lived a young girl named Elara. She was known for her adventurous spirit and insatiable curiosity. One day, while exploring the woods, Elara stumbled upon a hidden pathway she had never seen before. Driven by curiosity, she followed the path deeper into the forest until she came upon a clearing bathed in golden sunlight. In the center stood a magnificent tree with branches reaching towards the sky. Entranced, Elara approached the tree and noticed a small, intricately carved door at its base. With trembling hands, she pushed the door open and was greeted by a magical sight. Inside the tree was a cozy room adorned with twinkling fairy lights and shelves filled with ancient tomes.', '2024-04-20', 0);
+  5, 'Once upon a time', 'Once upon a time, in a quaint village nestled between rolling hills, there lived a young girl named Elara. She was known for her adventurous spirit and insatiable curiosity. One day, while exploring the woods, Elara stumbled upon a hidden pathway she had never seen before. Driven by curiosity, she followed the path deeper into the forest until she came upon a clearing bathed in golden sunlight. In the center stood a magnificent tree with branches reaching towards the sky. Entranced, Elara approached the tree and noticed a small, intricately carved door at its base. With trembling hands, she pushed the door open and was greeted by a magical sight. Inside the tree was a cozy room adorned with twinkling fairy lights and shelves filled with ancient tomes.', '2024-04-20', 120);
 
 INSERT INTO stories (
 user_id, title, content, created_date, upvote_count)
   VALUES (
-  3, 'Blossoms in the Concrete', 'Amidst the bustling city, Emily found solace in her rooftop garden. One day, she noticed a tiny sprout struggling to grow. With care, it flourished into a magnificent tree, bringing joy to all who passed by. Inspired, Emily started a community garden, fostering bonds and greenery in the heart of the urban jungle.', '2024-03-02', 0);
+  3, 'Blossoms in the Concrete', 'Amidst the bustling city, Emily found solace in her rooftop garden. One day, she noticed a tiny sprout struggling to grow. With care, it flourished into a magnificent tree, bringing joy to all who passed by. Inspired, Emily started a community garden, fostering bonds and greenery in the heart of the urban jungle.', '2024-03-02', 89);
+
+INSERT INTO stories (
+user_id, title, content, created_date)
+  VALUES (
+  4, "The Last Transmission", "In the year 2050, Earth stood on the precipice of a new era. Humanity had conquered the stars, colonizing distant planets and moons. Yet, amidst the vast expanse of space, there remained one place untouched by human presence: Proxima Centauri, the nearest star system to our own.", '2024-04-30')

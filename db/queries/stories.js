@@ -6,7 +6,7 @@ const db = require('../connection');
 // Read All stories
 const getStories = () => {
   return db.query(
-    `SELECT * FROM stories
+    `SELECT *, stories.id as story_id FROM stories
      JOIN users ON users.id = user_id;`)
     .then(data => {
       return data.rows;
