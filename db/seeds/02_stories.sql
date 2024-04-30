@@ -6,7 +6,7 @@ user_id, title, content, created_date, upvote_count)
 INSERT INTO stories (
 user_id, title, content, created_date, is_complete, upvote_count)
   VALUES (
-  1, 'The Forgotten Melody', 'In the bustling heart of the city, amidst the cacophony of honking cars and chattering pedestrians, there existed a small, forgotten alleyway. It was a place where time seemed to stand still, where the whispers of the past lingered in the air like an enchanting melody waiting to be rediscovered. Nestled within this forgotten corner was an old, weather-beaten music shop, its sign barely visible under layers of dust and neglect.', '2024-03-28', true, 500);
+  1, 'The Forgotten Melody', 'In the bustling heart of the city, amidst the cacophony of honking cars and chattering pedestrians, there existed a small, forgotten alleyway. It was a place where time seemed to stand still, where the whispers of the past lingered in the air like an enchanting melody waiting to be rediscovered. Nestled within this forgotten corner was an old, weather-beaten music shop, its sign barely visible under layers of dust and neglect. -	Few ventured down this alley anymore, and even fewer noticed the quaint little store hidden within its shadows. But one day, a young girl named Lily stumbled upon this hidden gem. Drawn by a faint strain of music drifting through the air, she followed its haunting melody until she found herself standing before the dusty window of the forgotten music shop. With curious eyes, Lily pushed open the creaky door and stepped inside, her senses.', '2024-03-28', true, 500);
 
 INSERT INTO stories (
 user_id, title, content, created_date, upvote_count)

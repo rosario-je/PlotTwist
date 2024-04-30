@@ -45,12 +45,14 @@
     <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
     </section>
   </article>
+  <% if (story.is_complete != true) { %>
   <div class="navbuttons">
     <div class="storybuttons">
       <a href="/stories/<%=story.id%>/add"class=addstory>Add to Story</a>
       <button id=viewadds>View Adds</button>
     </div>
   </div>
+  <% } %>
 </section>
 
       <!-- Contributions -->
