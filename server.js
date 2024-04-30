@@ -5,6 +5,8 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
+// const bcrypt = require("bcryptjs");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -25,6 +27,14 @@ app.use(
   })
 );
 app.use(express.static('public'));
+//Middleware to parse cookies
+app.use(cookieSession({
+  name: 'session',
+  secret: 'secretCookie',
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
 
 // Separated Routes for each Resource
 
@@ -41,11 +51,10 @@ const registerRoute = require('./routes/register')
 
 const storyRoutes = require('./routes/stories');
 
-const newStoryRoute = require('./routes/new_story');
-const userStoriesRoute = require('./routes/user_stories');
-const userContributionsRoute = require('./routes/user_contributions');
+
 
 const userProfileRoute = require('./routes/user_profile')
+const addToStoryRoute = require('./routes/add_to_story')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -60,12 +69,11 @@ const userProfileRoute = require('./routes/user_profile')
 app.use('/landing', landingRoute)
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
-app.use('/user_profile', userProfileRoute);
+app.use('/user', userProfileRoute);
 
 app.use('/stories', storyRoutes)
-app.use('/new_story', newStoryRoute)
-app.use('/user_stories', userStoriesRoute)
-app.use('/user_contributions', userContributionsRoute)
+app.use('/add_to_story', addToStoryRoute)
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page

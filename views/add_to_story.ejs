@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add To Story</title>
+  <!-- Required Links -->
+  <%- include('partials/defaultLinks.ejs'); %>
+
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/add_to_story.css" type="text/css" />
+
+        <!-- Internal Scripts -->
+        <script src="/vendor/jquery-3.0.0.js"></script>
+        <script defer src="/scripts/add_to_story.js"></script>
+
+</head>
+<%- include('partials/_user_menu'); %>
+  <%- include('partials/_user_navbar'); %>
+
+    <body>
+
+      <section class="add_to_story_container">
+
+        <!-- Avatar and Name -->
+        <div class="avatar-container">
+          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+          <h3>Levi User One</h3>
+        </div>
+
+        <!-- Story Body and Button -->
+
+        <div class="textarea-container">
+          <textarea id="storyTextarea" placeholder="Continue Story..."></textarea>
+          <div class="button-counter">
+          <span id="wordCount">500</span>
+          <button class="post_button">POST</button>
+        </div>
+        </div>
+
+      </section>
+    </body>
+
+</html>

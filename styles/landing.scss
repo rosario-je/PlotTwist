@@ -193,7 +193,7 @@ footer {
 
 // Buttons
 
-button {
+.signin_button, .signup_button {
   background-color: $accent-color;
   color: white;
   font-size: 1.25rem;
@@ -203,6 +203,9 @@ button {
   width: 175px;
   height: 45px;
   border-radius: 5px;
+  text-align: center;
+  align-content: center;
+  text-decoration: none;
 }
 .signin_button:hover {
   background-color: $primary-color;
