@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Required Links -->
+  <%- include('partials/defaultLinks.ejs'); %>
+
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new_story.css" type="text/css" />
+
+</head>
+<%- include('partials/_user_menu'); %>
+  <%- include('partials/_user_navbar'); %>
+    <body>
+
+      <section class="new_story_container">
+
+        <!-- Avatar and Name -->
+        <div class="avatar-container">
+          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+          <h3>Levi User One</h3>
+        </div>
+
+        <!-- Title and Allow Contributions -->
+        <div class="title-container">
+          <div class="title-text">
+            <h3>Title</h3>
+            <input type="text" placeholder="Write the title of your story here...">
+          </div>
+          <div class="allow-contributions">
+            <h3>Allow Contributions?</h3>
+            <div class="yes-no-buttons">
+              <button>YES</button>
+              <button>NO</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Content -->
+
+        <div class="textarea-container">
+          <textarea placeholder="Write your story here..."></textarea>
+          <button class="post_button">POST</button>
+        </div>
+
+      </section>
+    </body>
+
+</html>

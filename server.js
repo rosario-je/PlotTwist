@@ -38,10 +38,12 @@ app.use(express.static('public'));
 const landingRoute = require('./routes/landing');
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register')
+
 const storyRoutes = require('./routes/stories');
-const newstoryRoute = require('./routes/newstory');
-const userstoriesRoute = require('./routes/userstories');
-const usercontrRoute = require('./routes/usercontr');
+
+const newStoryRoute = require('./routes/new_story');
+const userStoriesRoute = require('./routes/user_stories');
+const userContributionsRoute = require('./routes/user_contributions');
 
 const userProfileRoute = require('./routes/user_profile')
 
@@ -61,9 +63,9 @@ app.use('/register', registerRoute);
 app.use('/user_profile', userProfileRoute);
 
 app.use('/stories', storyRoutes)
-app.use('/newstory', newstoryRoute)
-app.use('/userstories', userstoriesRoute)
-app.use('/usercontr', usercontrRoute)
+app.use('/new_story', newStoryRoute)
+app.use('/user_stories', userStoriesRoute)
+app.use('/user_contributions', userContributionsRoute)
 // Note: mount other resources here, using the same pattern above
 
 // Home page
