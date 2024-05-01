@@ -26,8 +26,8 @@
 
         <!-- Avatar and Name -->
         <div class="avatar-container">
-          <img src="/docs/icons/<%= user[0].user_icon%>" alt="Avatar">
-          <h1>@<%= user[0].username%></h1>
+          <img src="/docs/icons/<%= user.user_icon%>" alt="Avatar">
+          <h1>@<%= user.username%></h1>
         </div>
 
 
@@ -55,11 +55,11 @@
         </div>
 
         <section class="contribution_cards_container">
-          <% for (let contribution of listOfContributions) { %>
+          <% for (let contribution of pendingList) { %>
           <div class="contributions-card">
             <!-- Avatar and User Name -->
             <div class="avatar-container2">
-              <img src="/docs/icons/<%= user[0].user_icon%>" alt="Avatar">
+              <img src="/docs/icons/<%= contribution.avatar%>" alt="Avatar">
               <div class="user-details">
                 <h2>@<%= contribution.username%></h2>
                 <p class="timestamp"><%=contribution.submission_date%></p>

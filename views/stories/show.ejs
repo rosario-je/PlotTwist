@@ -25,33 +25,42 @@
   <%- include('../partials/_user_menu'); %>
     <%- include('../partials/_user_navbar'); %>
 
-  <!-- Main story box -->
-<section class="story_container">
-  <article class="mainstory">
-    <section class="titlebody">
-      <h1 class="maintitle"><%=story.title%></h1>
-      <p class="story"><%=story.content%></p>
-    </section>
-    <footer class="postfooter">
-      <section class="usercounter">
-        <img class="usericon" src="/docs/icons/<%=story.user_icon%>" alt="">
-        <section class="user">@<%=story.username%></section>
-    <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
-        <div class="likecounter">
-          <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
-          <div class="like-count"><%=story.upvote_count%></div>
-        </div>
-    <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
+      <!-- Main story box -->
+      <section class="story_container">
+        <article class="mainstory">
+          <section class="titlebody">
+            <h1 class="maintitle">
+              <%=story.title%>
+            </h1>
+            <p class="story">
+              <%=story.content%>
+            </p>
+          </section>
+          <footer class="postfooter">
+            <section class="usercounter">
+              <div class="user_info_footer">
+                <img class="usericon" src="/docs/icons/<%=story.user_icon%>" alt="">
+                <section class="user">@<%=story.username%>
+                </section>
+              </div>
+              <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
+              <div class="likecounter">
+                <button class="like-button"><i class="fa-solid fa-heart heart"></i></button>
+                <div class="like-count">
+                  <%=story.upvote_count%>
+                </div>
+              </div>
+              <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
+            </section>
+          </footer>
+        </article>
+        <% if (story.is_complete !=true) { %>
+          <div class="storybuttons">
+            <a href="/stories/<%=story.id%>/add" class=addstory>Add to Story</a>
+            <button id=viewadds>View Adds</button>
+          </div>
+          <% } %>
       </section>
-    </footer>
-  </article>
-  <% if (story.is_complete != true) { %>
-    <div class="storybuttons">
-      <a href="/stories/<%=story.id%>/add"class=addstory>Add to Story</a>
-      <button id=viewadds>View Adds</button>
-    </div>
-  <% } %>
-</section>
 
       <!-- Contributions -->
 
@@ -64,13 +73,18 @@
               <%=contribution.content%>
             </p>
             <section class="usercounter">
-        <img class="usericon" src="/docs/icons/<%=contribution.user_icon%>" alt="">
-              <section class="user">@<%=contribution.username%>
-              </section>
+              <div class="user_info_footer">
+                <img class="usericon" src="/docs/icons/<%=contribution.user_icon%>" alt="">
+                <div class="user">
+                  <%=contribution.username%>
+                </div>
+              </div>
               <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
               <div class="likecounter">
                 <button class="like-button"><i class="fa-solid fa-heart"></i></button>
-                <span class="like-count"><%=contribution.upvote_count%></span>
+                <span class="like-count">
+                  <%=contribution.upvote_count%>
+                </span>
               </div>
               <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
             </section>

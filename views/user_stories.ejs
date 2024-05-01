@@ -27,8 +27,8 @@
 
         <!-- Avatar and Name -->
         <div class="avatar-container">
-          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-          <h3>Levi User One</h3>
+          <img src="/docs/icons/<%=user.user_icon%>" alt="Avatar">
+          <h3>@<%=user.username%></h3>
         </div>
 
         <!-- User Story Menu -->
@@ -40,7 +40,7 @@
             </li>
             <li>
               <i class="fa-solid fa-heart" style="color: #d90429;"></i>
-              <a class="user_menu_link" href="">Up votes</a>
+              <a class="user_menu_link" href="">Up Votes</a>
             </li>
             <li>
               <i class="fa-solid fa-arrow-up-a-z" style="color: #d90429;"></i>
@@ -54,43 +54,28 @@
         </div>
 
         <div class="story_card_container">
+          <% for(let story of listOfStories) { %>
           <div class="story-card">
             <!-- Avatar and User Name -->
             <div class="avatar-container2">
-              <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+              <img src="/docs/icons/<%=story.avatar%>" alt="Avatar">
               <div class="user-details">
-                <h2>Levi</h2>
-                <p class="timestamp">Posted 5 days ago</p>
+                <h2>@<%=story.username%></h2>
+                <p class="timestamp"><%=story.created_date%></p>
               </div>
             </div>
   
             <!-- Contribution Details -->
               <div class="story-details">
-                <p><span class="story-title">Levi Goes To The Circus</span></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor fringilla felis, nec tempor tortor
-                  tristique vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-                  Curabitur lacinia ex at felis pretium, nec posuere eros suscipit. Nullam et nisi ac urna eleifend
-                  scelerisque. Nam ut quam quam. Duis auctor lorem eget urna euismod, nec tincidunt ex ullamcorper. Nam at
-                  fermentum ligula. Morbi sollicitudin dolor vitae ipsum lobortis, ut placerat ex vehicula. Morbi sed
-                  blandit nisi. Praesent porta hendrerit odio. Duis scelerisque scelerisque urna, eget scelerisque lacus
-                  venenatis sit amet. Nam ut quam quam. Duis auctor lorem eget urna euismod, nec tincidunt ex ullamcorper.
-                  Nam at fermentum ligula. Morbi sollicitudin dolor vitae ipsum lobortis, ut placerat ex vehicula. Morbi sed
-                  blandit nisi. Praesent porta hendrerit odio. Duis scelerisque scelerisque urna, eget scelerisque lacus
-                  venenatis sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-                  curae; Curabitur lacinia ex at felis pretium, nec posuere eros suscipit. Nullam et nisi ac urna eleifend
-                  scelerisque. Nam ut quam quam. Duis auctor lorem eget urna euismod, nec tincidunt ex ullamcorper. Nam at
-                  fermentum ligula. Morbi sollicitudin dolor vitae ipsum lobortis, ut placerat ex vehicula. Morbi sed
-                  blandit nisi. Praesent porta hendrerit odio. Duis scelerisque scelerisque urna, eget scelerisque lacus
-                  venenatis sit amet. Nam ut quam quam. Duis auctor lorem eget urna euismod, nec tincidunt ex ullamcorper.
-                  Nam at fermentum ligula. Morbi sollicitudin dolor vitae ipsum lobortis, ut placerat ex vehicula. Morbi sed
-                  blandit nisi. Praesent porta hendrerit odio. Duis scelerisque scelerisque urna, eget scelerisque lacus
-                  venenatis sit amet.</p>
+                <p><span class="story-title"><%=story.title%></span></p>
+                <p><%=story.content%></p>
                 <div class="upvotes">
                   <i class="fa-solid fa-heart" style="color: #d90429;"></i>
-                  <p class="upvote-number">50</p>
+                  <p class="upvote-number"><%=story.upvote_count%></p>
                 </div>
               </div>
           </div>
+          <% } %>
         </div>
 
       </section>
