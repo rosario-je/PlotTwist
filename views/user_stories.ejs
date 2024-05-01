@@ -9,8 +9,13 @@
   <!-- Required Links -->
   <%- include('partials/defaultLinks.ejs'); %>
 
-    <!-- Internal CSS -->
+  <!-- Internal CSS -->
     <link rel="stylesheet" href="/styles/user_stories.css" type="text/css" />
+
+  <!-- Internal Scripts -->
+  <!-- THIS FILE NEEDS JQUERY -->
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/mark_complete.js"></script>
 
     <!-- Font Awesome Access -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -74,6 +79,11 @@
                   <p class="upvote-number"><%=story.upvote_count%></p>
                 </div>
               </div>
+              <!-- MARK COMPLETE IS HERE -->
+              <% if (!story.is_complete) { %>
+              <a data-story="<%= story.id %>" class="complete-story">Mark Complete</a>
+            <% } %>
+            <!--  -->
           </div>
           <% } %>
         </div>
