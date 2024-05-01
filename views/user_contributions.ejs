@@ -55,58 +55,25 @@
         </div>
 
         <section class="contribution_cards_container">
+          <% for (let contribution of contributions) { %>
           <div class="contributions-card">
             <!-- Avatar and User Name -->
             <div class="avatar-container2">
               <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
               <div class="user-details">
-                <h2>Levi</h2>
-                <p class="timestamp">Posted 2 hours ago</p>
+                <h2><%= contribution.username%></h2>
+                <p class="timestamp"><%= contribution.submission_date%></p>
               </div>
             </div>
 
             <!-- Contribution Details -->
             <div class="contribution-details">
-              <p><span class="contribution-title">Contribution for:</span> <span class="story-title">The Far Away
-                  Castle</span></p>
+              <p><span class="contribution-title">Contribution for:</span> <span class="story-title"><%= contribution.story_title%></span></p>
               <div class="divider"></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor fringilla felis, nec tempor tortor
-                tristique vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-                Curabitur lacinia ex at felis pretium, nec posuere eros suscipit. Nullam et nisi ac urna eleifend
-                scelerisque. Nam ut quam quam. Duis auctor lorem eget urna euismod, nec tincidunt ex ullamcorper. Nam at
-                fermentum ligula. Morbi sollicitudin dolor vitae ipsum lobortis, ut placerat ex vehicula. Morbi sed
-                blandit nisi. Praesent porta hendrerit odio. Duis scelerisque scelerisque urna, eget scelerisque lacus
-                venenatis sit amet. Nam ut quam quam. Duis auctor lorem eget urna euismod, nec tincidunt ex ullamcorper.
-                Nam at fermentum ligula. Morbi sollicitudin dolor vitae ipsum lobortis, ut placerat ex vehicula. Morbi
-                sed
-                blandit nisi. Praesent porta hendrerit odio. Duis scelerisque scelerisque urna, eget scelerisque lacus
-                venenatis sit amet</p>
+              <p><%= contribution.content%></p>
             </div>
           </div>
-
-          <div class="contributions-card">
-            <!-- Avatar and User Name -->
-            <div class="avatar-container2">
-              <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-              <div class="user-details">
-                <h2>Levi</h2>
-                <p class="timestamp">Posted 3 weeks ago</p>
-              </div>
-            </div>
-
-            <!-- Contribution Details -->
-            <div class="contribution-details">
-              <p><span class="contribution-title">Contribution for:</span> <span class="story-title">Once Upon A
-                  Time</span></p>
-              <div class="divider"></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor fringilla felis, nec tempor tortor
-                tristique vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-                Curabitur lacinia ex at felis pretium, nec posuere eros suscipit. Nullam et nisi ac urna eleifend
-                scelerisque. Nam ut quam quam. Duis auctor lorem eget urna euismod, nec tincidunt ex ullamcorper. Nam at
-                fermentum ligula. Morbi sollicitudin dolor vitae ipsum lobortis, ut placerat ex vehicula. Morbi sed
-                blandit nisi.</p>
-            </div>
-          </div>
+        <% } %>
         </section>
       </section>
     </body>
