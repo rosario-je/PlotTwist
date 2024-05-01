@@ -81,7 +81,7 @@ app.get('/', (req, res) => {
 //Default user login
 app.get('/login/:id', (req, res) => {
   res.cookie('user_id', req.params.id);
-  res.redirect('/user');
+  res.redirect('/stories');
 });
 
 app.listen(PORT, () => {
