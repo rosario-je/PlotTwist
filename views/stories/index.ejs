@@ -44,7 +44,9 @@
             </div>
             <div class="buttons">
               <a href="/stories/<%=story.story_id%>" class="readbutton">Read More</a>
+              <% if (!story.is_complete) { %>
               <a href class="contributebutton">Contribute</a>
+              <% } %>
             </div>
           </section>
         </article>

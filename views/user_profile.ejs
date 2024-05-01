@@ -52,7 +52,7 @@
             <div class="user_profile_info">
               <div class="user_profile_info_registerDate">
                 <i class="fa-regular fa-calendar"></i>
-                <h3>Joined May 3rd, 2024</h3>
+                <h3><%=user.date_joined%></h3>
               </div>
               <div class="user_profile_info_email">
                 <i class="fa-solid fa-envelope"></i>
@@ -80,7 +80,7 @@
                   <section class="usernameusericon">
                     <img class="usericon" src="/docs/icons/<%=story.user_icon%>" alt="">
                     <div class="userposttime">
-                      <h2 class="user"><%=story.username%>
+                      <h2 class="user">@<%=story.username%>
                       </h2>
                       <text class="posttime">
                         <%=story.created_date%>

@@ -1,31 +1,31 @@
 /* USE SINGLE QUOTES ONLY */
 
 INSERT INTO users (
-  username, email, password, user_icon) 
+  username, email, date_joined, password, user_icon) 
   VALUES (
-    'levibunny', 'levi@bunny', 'password1', 'rabbit.png');
+    'levibunny', 'levi@bunny', '2021-05-05','password1', 'rabbit.png');
 
 INSERT INTO users (
-  username, email, password, user_icon) 
+  username, email, date_joined, password, user_icon) 
   VALUES (
-    'laurelbunny', 'laurel@bunny', 'password2', 'rabbit2.png');
+    'laurelbunny', 'laurel@bunny', '2021-10-28', 'password2', 'rabbit2.png');
 
 INSERT INTO users (
-  username, email, password, user_icon) 
+  username, email, date_joined, password, user_icon) 
   VALUES (
-    'dexterkitty', 'dexter@kitty', 'password3', 'cat.png');
+    'dexterkitty', 'dexter@kitty', '2022-11-17', 'password3', 'cat.png');
 
 INSERT INTO users (
-  username, email, password, user_icon) 
+  username, email, date_joined, password, user_icon) 
   VALUES (
-    'bobbydog', 'bobby@dog', 'password4', 'dog1.png');
+    'bobbydog', 'bobby@dog', '2023-01-01', 'password4', 'dog1.png');
 
 INSERT INTO users (
-  username, email, password, user_icon) 
+  username, email, date_joined, password, user_icon) 
   VALUES (
-    'tayiodog', 'tayio@dog', 'password5', 'dog2.png');
+    'tayiodog', 'tayio@dog', '2023-01-21','password5', 'dog2.png');
 
 INSERT INTO users (
-  username, email, password, user_icon) 
+  username, email, date_joined, password, user_icon) 
   VALUES (
-    'lolakitty', 'lola@kitty', 'password5', 'cat2.png');
+    'lolakitty', 'lola@kitty', '2023-02-01', 'password5', 'cat2.png');

@@ -3,6 +3,7 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
   username VARCHAR(32) NOT NULL,
   email VARCHAR(32) NOT NULL,
+  date_joined DATE,
   password VARCHAR(32) NOT NULL,
   user_icon VARCHAR (255)
 );
