@@ -22,7 +22,19 @@ const getStoryById = (id) => {
       return data.rows[0];
     });
 }
+// Read 3 recent stories
+const getRecentStories = () => {
+  return db.query(
+  `SELECT stories.*, users.username, users.user_icon FROM stories
+  JOIN users ON users.id = user_id
+  ORDER BY stories.created_date DESC
+  LIMIT 3;`)
+  .then(data => {
+    return data.rows;
+  });
+}
+
 // Update story
 
 
-module.exports = { getStories, getStoryById };
+module.exports = { getStories, getStoryById, getRecentStories };
