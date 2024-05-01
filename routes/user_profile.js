@@ -44,7 +44,8 @@ router.get('/:id/contributions', (req, res) => {
 router.get('/:id/stories', (req, res) => {
   let id = req.params.id;
   Promise.all([getUserStories(id), getUserById(id)])
-    .then(([stories, user]) => {      
+    .then(([stories, userResults]) => {   
+      const user = userResults[0];
       res.render('user_stories', { user_id: id, listOfStories: stories, user });
     })
     .catch(error => {
