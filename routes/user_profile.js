@@ -12,7 +12,6 @@ router.param('id', (req, res, next, id) => {
   next();
 });
 
-const { getRecentStories } = require('../db/queries/stories');
 
 router.get('/:id', (req, res) => {
   const id = req.cookies["user_id"];
@@ -80,7 +79,6 @@ router.get('/:id/new_story', (req, res) => {
   getUserById(id)
     .then(users => {
       const user = users[0];
-      console.log(user);
       res.render('new_story', { user_id: id, user });
     })
     .catch(error => {
