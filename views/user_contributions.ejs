@@ -26,8 +26,8 @@
 
         <!-- Avatar and Name -->
         <div class="avatar-container">
-          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-          <h1>Levi User One</h1>
+          <img src="/docs/icons/<%= user[0].user_icon%>" alt="Avatar">
+          <h1><%= user[0].username%></h1>
         </div>
 
 
@@ -55,14 +55,14 @@
         </div>
 
         <section class="contribution_cards_container">
-          <% for (let contribution of contributions) { %>
+          <% for (let contribution of listOfContributions) { %>
           <div class="contributions-card">
             <!-- Avatar and User Name -->
             <div class="avatar-container2">
-              <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+              <img src="/docs/icons/<%= user[0].user_icon%>" alt="Avatar">
               <div class="user-details">
                 <h2><%= contribution.username%></h2>
-                <p class="timestamp"><%= contribution.submission_date%></p>
+                <p class="timestamp">Posted 2 hours ago</p>
               </div>
             </div>
 
