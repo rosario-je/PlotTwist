@@ -7,7 +7,8 @@ const db = require('../connection');
 const getStories = () => {
   return db.query(
     `SELECT *, stories.id as story_id FROM stories
-     JOIN users ON users.id = user_id;`)
+     JOIN users ON users.id = user_id
+     ORDER BY stories.created_date DESC;`)
     .then(data => {
       return data.rows;
     });

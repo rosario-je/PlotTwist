@@ -16,4 +16,16 @@ const getUserById = (id) => {
   });
 };
 
-module.exports = { getUsers, getUserById };
+const getUserStories = (id) => {
+  return db.query(`
+  SELECT users.*, users.id as current_user, stories.*, stories.id as user_story
+  FROM users
+  JOIN stories ON stories.user_id = users.id
+  WHERE stories.user_id = $1
+  ORDER BY stories.created_date DESC;`, [id])
+  .then(data => {
+    return data.rows;
+  });
+};
+
+module.exports = { getUsers, getUserById, getUserStories };
