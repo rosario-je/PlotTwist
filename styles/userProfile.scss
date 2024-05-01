@@ -56,8 +56,152 @@
   width: 80%;
   float: right;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   margin-top: 50px;
   padding-left: 170px;
   padding-right: 170px;
+}
+
+// Variables //
+@import "variables";
+
+.main_story_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', serif;
+  font-size: 18px;
+  width: 100%;
+  ul {
+    padding-left: 0px;
+  }
+}
+
+
+// Style sets //
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin button {
+  display: flex;
+  height: 40px;
+  width: 170px;
+  background-color: $secondary-text; 
+  border: none;
+  border-radius: 5px;
+  font-family: 'Inter', serif;
+  color: $text-color;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+}
+
+//Style Code for Stories//
+
+.usernameusericon {
+  @include flex-row;
+  padding-top: 1.75em;
+  padding-bottom: 10px;
+}
+
+.user {
+  margin-bottom: 0;
+}
+
+.posttime {
+  color: $secondary-text;
+}
+
+.counterbuttons {
+  @include flex-row;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 500;
+  color: $secondary-text;
+  padding-top: 0.5em;
+  padding-bottom: 20px;
+  border-top: solid 3px;
+}
+
+.usericon {
+  height: 4em;
+  width: 4em;
+  margin-right: 0.5em;
+}
+
+.buttons {
+  @include flex-row;
+}
+
+.readbutton {
+  @include button;
+  margin-right: 1em;
+}
+
+.contributebutton {
+  @include button;
+}
+
+.likecounter{
+  @include flex-row;
+  align-items: center;
+}
+
+.like-button {
+  color: $primary-color;
+  border: none;
+  background: inherit;
+  padding-right: 10px;
+}
+
+.story {
+  overflow: hidden;
+  display: 
+  -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+ 
+}
+
+
+
+.maintitle {
+  text-align: left;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.mainstory {
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  height: auto;
+  border-radius: 35px;
+  border: none;
+  background: $contrast;
+  padding-left: 45px;
+  padding-right: 45px;
+  margin-top: 40px
+};
+
+// Remove underline on links //
+
+a:link { 
+  text-decoration: none; 
+} 
+a:visited { 
+  text-decoration: none; 
+} 
+a:hover { 
+  text-decoration: none; 
+} 
+a:active { 
+  text-decoration: none; 
 }
