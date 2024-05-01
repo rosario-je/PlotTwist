@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const router  = express.Router();
 const { getUserById, getUserStories } = require('../db/queries/users');
-const { getContributionsByUserId } = require('../db/queries/contributions');
+const { getContributionsByUserId, getPendingContributionsByUserId } = require('../db/queries/contributions');
 
 
 // Middleware to extract user ID from URL parameters and set it in cookies
@@ -32,6 +32,21 @@ router.get('/:id/contributions', (req, res) => {
   Promise.all([getContributionsByUserId(id), getUserById(id)])
     .then(([contributions, user]) => {      
       res.render('user_contributions', { user_id: id, listOfContributions: contributions, user });
+    })
+    .catch(error => {
+      // Handle errors
+      console.error('Error:', error);
+      res.status(500).send('Internal Server Error');
+    });
+}); 
+
+// Route for filtered contributions on user story for approval/rejection 
+router.get('/:id/pending', (req, res) => {
+  let id = req.params.id;
+  Promise.all([getPendingContributionsByUserId(id), getUserById(id)])
+    .then(([contributions, userResults]) => {   
+      const user = userResults[0];
+      res.render('pending_adds', { user_id: id, pendingList: contributions, user });
     })
     .catch(error => {
       // Handle errors

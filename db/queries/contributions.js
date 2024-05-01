@@ -10,6 +10,7 @@ const getContributionsByStoryId = (id) => {
       return data.rows;
     });
 }
+
 const getContributionsByUserId = (id) => {
   return db.query(
     `SELECT contributions.*, users.username AS username, users.user_icon AS avatar, stories.title AS story_title FROM contributions
@@ -22,4 +23,15 @@ const getContributionsByUserId = (id) => {
     });
 }
 
-module.exports = { getContributionsByStoryId, getContributionsByUserId };
+const getPendingContributionsByUserId = (id) => {
+  return db.query(
+    `SELECT contributions.*, users.username AS username, users.user_icon AS avatar, stories.title AS story_title FROM contributions
+       JOIN users ON users.id = contributions.user_id 
+       JOIN stories ON stories.id = contributions.story_id
+       WHERE stories.user_id = $1;`, [id])
+    .then(data => {
+      return data.rows;
+    });
+}
+
+module.exports = { getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId };
