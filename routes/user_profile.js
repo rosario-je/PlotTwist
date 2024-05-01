@@ -11,7 +11,7 @@ router.param('id', (req, res, next, id) => {
 });
 const { getRecentStories } = require('../db/queries/stories');
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
   let id = req.cookies["user_id"]
   Promise.all ([
     getUserById(id),
@@ -20,23 +20,9 @@ router.get('/', (req, res) => {
   .then(results => {
     const user = results[0][0];
     const stories = results[1];
-    const templatevars = {user, stories};
-  res.render('user_profile', templatevars);
+  res.render('user_profile', {user, stories, user_id: id});
   })
 }); 
-
-// Route for specific logged in user profile
-// router.get('/', (req, res) => {
-//   let id = req.cookies["user_id"]
-//   getUserById(id)
-//   .then(users => {
-//     let user = users[0];
-//     const templatevars = {
-//       user
-//     }
-//     res.render('user_profile', templatevars);
-//   });
-// }); 
 
 // Route for user contributions
 router.get('/:id/contributions', (req, res) => {

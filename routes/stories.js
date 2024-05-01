@@ -6,19 +6,18 @@ const { getContributionsByStoryId } = require('../db/queries/contributions');
 // Route for all stories feed  
 
 router.get('/', (req, res) => {
-
+  let id = req.cookies["user_id"]
   getStories()
-  .then(stories => {
-    const templatevars = {
-      stories 
-    }
-    res.render('stories/index', templatevars);
+  .then(results => {
+      const stories = results   
+    res.render('stories/index', {stories, user_id: id});
   });
 }); 
 
 // Route for each story by ID with contributions
 
 router.get('/:id', (req, res) => {
+  let id = req.cookies["user_id"]
   Promise.all ([
     getStoryById(req.params.id),
     getContributionsByStoryId(req.params.id) 
@@ -26,7 +25,7 @@ router.get('/:id', (req, res) => {
   .then(results => {
     const [story, contributions] = results
 
-  const templatevars = {story, contributions}
+  const templatevars = {story, contributions, user_id: id}
 
   res.render('stories/show', templatevars);
   })
