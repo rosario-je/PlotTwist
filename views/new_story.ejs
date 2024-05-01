@@ -13,41 +13,52 @@
     <link rel="stylesheet" href="/styles/new_story.css" type="text/css" />
 
 </head>
-<%- include('partials/_user_menu'); %>
+
+<body>
+
+  <%- include('partials/_user_menu'); %>
   <%- include('partials/_user_navbar'); %>
-    <body>
 
-      <section class="new_story_container">
+  <section class="new_story_container">
 
+<<<<<<< HEAD
+    <!-- Avatar and Name -->
+    <div class="avatar-container">
+      <img src="/docs/icons/<%=user.user_icon%>" alt="Avatar">
+      <h3><%=user.username%></h3>
+    </div>
+=======
         <!-- Avatar and Name -->
         <div class="avatar-container">
           <img src="/docs/icons/<%=user.user_icon%>" alt="Avatar">
           <h3>@<%=user.username%></h3>
         </div>
+>>>>>>> 0983803771fbb91185821e5e3046b9e368cc3bfd
 
-        <!-- Title and Allow Contributions -->
-        <div class="title-container">
-          <div class="title-text">
-            <h3>Title</h3>
-            <input type="text" placeholder="Write the title of your story here...">
-          </div>
-          <div class="allow-contributions">
-            <h3>Allow Contributions?</h3>
-            <div class="yes-no-buttons">
-              <button>YES</button>
-              <button>NO</button>
-            </div>
+    <form id="text-title-container" action="/stories" method="post">
+      <!-- Title and Allow Contributions -->
+      <div class="title-container">
+        <div class="title-text">
+          <h3>Title</h3>
+          <input type="text" name="title" placeholder="Write the title of your story here...">
+        </div>
+        <div class="allow-contributions">
+          <h3>Allow Contributions?</h3>
+          <div class="yes-no-buttons">
+            <button>YES</button>
+            <button>NO</button>
           </div>
         </div>
+      </div>
 
-        <!-- Story Content -->
+      <!-- Story Content -->
+      <div class="textarea-container">
+        <textarea id="story_text" name="content" placeholder="Write your story here..."></textarea>
+        <button type="submit" class="post_button">POST</button>
+      </div>
+    </form>
 
-        <div class="textarea-container">
-          <textarea placeholder="Write your story here..."></textarea>
-          <button class="post_button">POST</button>
-        </div>
-
-      </section>
-    </body>
+  </section>
+</body>
 
 </html>
