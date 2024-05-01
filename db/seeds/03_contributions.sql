@@ -16,6 +16,11 @@ INSERT INTO contributions (
   3, 1, 'Whispers of forgotten magic echoed through the chambers, and strange symbols adorned the doorways. Driven by curiosity, Cedric pressed on, his footsteps echoing in the silence. Each room revealed a new mystery, from ancient manuscripts to relics of power long thought lost. But with every discovery, he felt the castles magic stirring, as if awakening from a slumber of centuries. As dawn broke and the storm subsided, Cedric emerged from Far Away Castle, his mind ablaze with wonder and excitement.', '2024-03-21');
 
 INSERT INTO contributions (
+  user_id, story_id, content, submission_date)
+  VALUES (
+  3, 1, 'Lore Ipsum got tested with a dynamic contribution', '2024-03-21');
+
+INSERT INTO contributions (
   user_id, story_id, content, submission_date, upvote_count)
   VALUES (
   4, 1, 'Though he had only scratched the surface of its secrets, he knew that his journey had only just begun. And so, with the castle fading into the horizon behind him, Cedric set forth into the world, eager to uncover the mysteries that awaited him beyond its enchanted walls. For in the heart of Far Away Castle, he had found not just shelter from the storm, but the promise of adventure beyond imagination.',  '2024-04-01', 5);
