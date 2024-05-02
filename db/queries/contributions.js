@@ -14,8 +14,8 @@ const getContributionsByStoryId = (id) => {
 const getContributionsByUserId = (id) => {
   return db.query(
     `SELECT contributions.*, users.username AS username, users.user_icon AS avatar, stories.title AS story_title FROM contributions
-       JOIN users ON users.id = user_id 
-       JOIN stories ON stories.user_id = users.id
+       JOIN users ON users.id = contributions.user_id 
+       JOIN stories ON stories.id = contributions.story_id
        WHERE contributions.user_id = $1
        ORDER BY contributions.submission_date DESC;`, [id])
     .then(data => {

@@ -33,8 +33,11 @@ router.get('/:id', (req, res) => {
 // Route for user contributions
 router.get('/:id/contributions', (req, res) => {
   const id = req.params.id;
-  Promise.all([getContributionsByUserId(id), getUserById(id)])
-    .then(([contributions, user]) => {      
+  Promise.all([ getUserById(id), getContributionsByUserId(id)])
+    .then(([userResults, contributions]) => {  
+      console.log(contributions);
+      console.log(userResults[0]);
+      const user = userResults[0];    
       res.render('user_contributions', { user_id: id, listOfContributions: contributions, user });
     })
     .catch(error => {
