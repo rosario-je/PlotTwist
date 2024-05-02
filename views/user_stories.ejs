@@ -9,11 +9,11 @@
   <!-- Required Links -->
   <%- include('partials/defaultLinks.ejs'); %>
 
-  <!-- Internal CSS -->
+    <!-- Internal CSS -->
     <link rel="stylesheet" href="/styles/user_stories.css" type="text/css" />
 
-  <!-- Internal Scripts -->
-  <!-- THIS FILE NEEDS JQUERY -->
+    <!-- Internal Scripts -->
+    <!-- THIS FILE NEEDS JQUERY -->
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/mark_complete.js"></script>
 
@@ -33,7 +33,8 @@
         <!-- Avatar and Name -->
         <div class="avatar-container">
           <img src="/docs/icons/<%=user.user_icon%>" alt="Avatar">
-          <h3>@<%=user.username%></h3>
+          <h3>@<%=user.username%>
+          </h3>
         </div>
 
         <!-- User Story Menu -->
@@ -41,7 +42,7 @@
           <ul>
             <li>
               <i class="fa-solid fa-calendar-days" style="color: #d90429;"></i>
-              <a class="user_menu_link" href="">Date Added</a>
+              <a class="user_menu_link" href="/user/<%= user_id %>/stories">All my stories</a>
             </li>
             <li>
               <i class="fa-solid fa-arrow-up-a-z" style="color: #d90429;"></i>
@@ -56,37 +57,49 @@
 
         <div class="story_card_container">
           <% for(let story of listOfStories) { %>
-          <div class="story-card">
-            <!-- Avatar and User Name -->
-            <div class="avatar-container2">
-              <img src="/docs/icons/<%=story.avatar%>" alt="Avatar">
-              <div class="user-details">
-                <h2>@<%=story.username%></h2>
-                <p class="timestamp"><%=story.created_date%></p>
+            <div class="story-card">
+              <!-- Avatar and User Name -->
+              <div class="avatar-container2">
+                <img src="/docs/icons/<%=story.avatar%>" alt="Avatar">
+                <div class="user-details">
+                  <h2>@<%=story.username%>
+                  </h2>
+                  <p class="timestamp">
+                    <%=story.created_date%>
+                  </p>
+                </div>
               </div>
-            </div>
-  
-            <!-- Story Details -->
+
+              <!-- Story Details -->
               <div class="story-details">
-                <p><span class="story-title"><%=story.title%></span></p>
-                <p><%=story.content%></p>
+                <p><span class="story-title">
+                    <%=story.title%>
+                  </span></p>
+                <p>
+                  <%=story.content%>
+                </p>
                 <div class="story_footer">
                   <div class="upvotes">
                     <i class="fa-solid fa-heart" style="color: #d90429;"></i>
-                    <p class="upvote-number"><%=story.upvote_count%></p>
+                    <p class="upvote-number">
+                      <%=story.upvote_count%>
+                    </p>
                   </div>
-                  <a href="/stories/<%=story.id%>" class="readbutton">Read More</a>
+                  <div class="user_buttons_my_story">
+                    <% if (!story.is_complete) { %>
+                      <div class="mark-complete">
+                        <a class="complete-story" data-story="<%= story.id %>">Mark Complete</a>
+                      </div>
+                      <% } %>
+                        <a href="/stories/<%=story.id%>" class="readbutton">Read More</a>
+                  </div>
+                  <!-- MARK COMPLETE IS HERE -->
                 </div>
               </div>
-              <!-- MARK COMPLETE IS HERE -->
-              <% if (!story.is_complete) { %>
-                <div class="mark-complete">
-                  <a class="complete-story" data-story="<%= story.id %>" >Mark Complete</a>
-              </div>
+
+              <!--  -->
+            </div>
             <% } %>
-            <!--  -->
-          </div>
-          <% } %>
         </div>
 
       </section>
