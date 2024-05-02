@@ -44,7 +44,7 @@ const getStoryByStatus = (id) => {
   return db.query(
     `SELECT stories.*, users.username, users.user_icon FROM stories
      JOIN users ON users.id = user_id 
-     WHERE stories.id = $1 AND stories.is_complete = TRUE
+     WHERE users.id = $1 AND stories.is_complete = TRUE
      ORDER BY stories.created_date DESC;`, [id])
     .then(data => {
       return data.rows;
