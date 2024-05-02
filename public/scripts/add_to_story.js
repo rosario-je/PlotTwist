@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
   const textarea = document.getElementById('storyTextarea');
-  const charCountDisplay = document.getElementById('charCount'); // Changed ID to match HTML
-  const maxChars = 500; // Changed to max characters
-
+  const charCountDisplay = document.getElementById('charCount');
+  const maxChars = 500;
   textarea.addEventListener('input', function () {
-    const charCount = textarea.value.length; // Count characters directly
-    const remainingChars = maxChars - charCount; // Calculate remaining characters
-    charCountDisplay.textContent = remainingChars; // Display remaining characters
-
+    const charCount = textarea.value.length;
+    const remainingChars = maxChars - charCount;
+    charCountDisplay.textContent = remainingChars;
     if (remainingChars < 0) {
-      textarea.value = textarea.value.slice(0, maxChars); // Limit input to maxChars
+      textarea.value = textarea.value.slice(0, maxChars);
       charCountDisplay.textContent = 0;
     }
   });

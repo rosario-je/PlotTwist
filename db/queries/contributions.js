@@ -1,9 +1,22 @@
 const db = require('../connection');
 
+
+const addContribution = function (storyID, userId, text) {
+  return db.query (
+    `INSERT INTO contributions (story_id, user_id, content) VALUES ($1, $2, $3) RETURNING *`,
+    [storyID, userId, text]
+  )
+  .then(data => {
+    return data.rows;
+  });
+}
+
+
+
 const getContributionsByStoryId = (id) => {
   return db.query(
     `SELECT contributions.*, users.username, users.user_icon FROM contributions
-       JOIN users ON users.id = user_id 
+       JOIN users ON users.id = user_id
        WHERE contributions.story_id = $1
        ORDER BY contributions.submission_date DESC;`, [id])
     .then(data => {
@@ -14,7 +27,7 @@ const getContributionsByStoryId = (id) => {
 const getContributionsByUserId = (id) => {
   return db.query(
     `SELECT contributions.*, users.username AS username, users.user_icon AS avatar, stories.title AS story_title FROM contributions
-       JOIN users ON users.id = contributions.user_id 
+       JOIN users ON users.id = contributions.user_id
        JOIN stories ON stories.id = contributions.story_id
        WHERE contributions.user_id = $1
        ORDER BY contributions.submission_date DESC;`, [id])
@@ -26,7 +39,7 @@ const getContributionsByUserId = (id) => {
 const getPendingContributionsByUserId = (id) => {
   return db.query(
     `SELECT contributions.*, users.username AS username, users.user_icon AS avatar, stories.title AS story_title FROM contributions
-       JOIN users ON users.id = contributions.user_id 
+       JOIN users ON users.id = contributions.user_id
        JOIN stories ON stories.id = contributions.story_id
        WHERE stories.user_id = $1
        ORDER BY contributions.submission_date DESC;`, [id])
@@ -35,4 +48,4 @@ const getPendingContributionsByUserId = (id) => {
     });
 }
 
-module.exports = { getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId };
+module.exports = { addContribution, getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId };

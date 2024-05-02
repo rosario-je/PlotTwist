@@ -32,8 +32,8 @@
 
         <!-- Story Body and Button -->
 
-        <form id="textarea-container" action="/stories" method="post">
-          <textarea id="storyTextarea" placeholder="Continue Story..."></textarea>
+        <form id="textarea-container" class="contribute-form" action="/stories/contribute/<%=storyId %>" method="post">
+          <textarea id="storyTextarea" name="text" placeholder="Continue Story..."></textarea>
           <div class="button-counter">
           <span id="charCount">500</span>
           <button class="post_button">POST</button>
