@@ -10,6 +10,8 @@
 
   <!-- External Styles (text/icons) -->
   <%- include('../partials/defaultLinks.ejs'); %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 
     <!-- Internal Styles -->
     <link rel="stylesheet" href="/styles/story.css" />
@@ -59,13 +61,42 @@
             <a href="/stories/<%=story.id%>/add" class=addstory>Add to Story</a>
             <button id=viewadds>View Contributions</button>
           </div>
+          <% } else { %>
+            <section class="view_contributions animate__animated animate__slideInUp">
+              <h2 class="subheader">Contributions</h2>
+              <% for (let contribution of contributions) {%>
+                <article class="maincontribution">
+                  <p class="contributionstory">
+                    <%=contribution.content%>
+                  </p>
+                  <section class="usercounter">
+                    <div class="user_info_footer">
+                      <img class="usericon" src="/docs/icons/<%=contribution.user_icon%>" alt="">
+                      <div class="user">
+                        @<%=contribution.username%>
+                      </div>
+                    </div>
+                    <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
+                    <div class="likecounter">
+                      <button class="like-button"><i class="fa-solid fa-heart"></i></button>
+                      <span class="like-count">
+                        <%=contribution.upvote_count%>
+                      </span>
+                    </div>
+                    <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
+                  </section>
+                </article>
+                <% } %>
+            </section>
           <% } %>
-      </section>
-
-      <!-- Contributions -->
-
-      <!-- Hides contributions associated with story by default and loops through contributions array to display all contributions-->
-      <section class="contributions hiddentext">
+          
+        </section>
+        
+        <!-- Contributions -->
+        
+        <!-- Hides contributions associated with story by default and loops through contributions array to display all contributions-->
+        
+      <section class="view_contributions animate__animated animate__slideInUp" style="display: none">
         <h2 class="subheader">Contributions</h2>
         <% for (let contribution of contributions) {%>
           <article class="maincontribution">
