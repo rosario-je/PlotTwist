@@ -61,33 +61,6 @@
             <a href="/stories/<%=story.id%>/add" class=addstory>Add to Story</a>
             <button id=viewadds>View Contributions</button>
           </div>
-          <% } else { %>
-            <section class="view_contributions animate__animated animate__slideInUp">
-              <h2 class="subheader">Contributions</h2>
-              <% for (let contribution of contributions) {%>
-                <article class="maincontribution">
-                  <p class="contributionstory">
-                    <%=contribution.content%>
-                  </p>
-                  <section class="usercounter">
-                    <div class="user_info_footer">
-                      <img class="usericon" src="/docs/icons/<%=contribution.user_icon%>" alt="">
-                      <div class="user">
-                        @<%=contribution.username%>
-                      </div>
-                    </div>
-                    <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
-                    <div class="likecounter">
-                      <button class="like-button"><i class="fa-solid fa-heart"></i></button>
-                      <span class="like-count">
-                        <%=contribution.upvote_count%>
-                      </span>
-                    </div>
-                    <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
-                  </section>
-                </article>
-                <% } %>
-            </section>
           <% } %>
           
         </section>
