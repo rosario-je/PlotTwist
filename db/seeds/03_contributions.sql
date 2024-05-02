@@ -16,11 +16,6 @@ INSERT INTO contributions (
   3, 1, 'Whispers of forgotten magic echoed through the chambers, and strange symbols adorned the doorways. Driven by curiosity, Cedric pressed on, his footsteps echoing in the silence. Each room revealed a new mystery, from ancient manuscripts to relics of power long thought lost. But with every discovery, he felt the castles magic stirring, as if awakening from a slumber of centuries. As dawn broke and the storm subsided, Cedric emerged from Far Away Castle, his mind ablaze with wonder and excitement.', '2024-03-21');
 
 INSERT INTO contributions (
-  user_id, story_id, content, submission_date)
-  VALUES (
-  3, 1, 'Lore Ipsum got tested with a dynamic contribution', '2024-03-21');
-
-INSERT INTO contributions (
   user_id, story_id, content, submission_date, upvote_count)
   VALUES (
   4, 1, 'Though he had only scratched the surface of its secrets, he knew that his journey had only just begun. And so, with the castle fading into the horizon behind him, Cedric set forth into the world, eager to uncover the mysteries that awaited him beyond its enchanted walls. For in the heart of Far Away Castle, he had found not just shelter from the storm, but the promise of adventure beyond imagination.',  '2024-04-01', 5);
@@ -38,9 +33,9 @@ INSERT INTO contributions (
 INSERT INTO contributions (
   user_id, story_id, content, submission_date)
   VALUES (
-    4, 4, 'As the community flourished, so did Emilys own spirit. She found purpose in nurturing both plants and people, discovering the profound impact of simple acts of kindness. Through the garden, she forged bonds that transcended barriers of age, culture, and background. And in the shade of her tree, amid laughter and shared dreams, Emily realized that the true essence of life lay in cultivating love and connection.', '2024-04-01');
+  4, 4, 'As the community flourished, so did Emilys own spirit. She found purpose in nurturing both plants and people, discovering the profound impact of simple acts of kindness. Through the garden, she forged bonds that transcended barriers of age, culture, and background. And in the shade of her tree, amid laughter and shared dreams, Emily realized that the true essence of life lay in cultivating love and connection.', '2024-04-01');
 
 INSERT INTO contributions (
   user_id, story_id, content, submission_date)
   VALUES (
-    6, 5, 'Captain Sarah Novak gazed out of the viewport of the interstellar vessel, Pioneer, her eyes fixed on the distant glow of Proxima Centauri. She had spent her entire career dreaming of this moment, the chance to lead the first expedition to explore a new star system. With her crew by her side, she felt unstoppable.', '2024-04-30');
+  6, 5, 'Captain Sarah Novak gazed out of the viewport of the interstellar vessel, Pioneer, her eyes fixed on the distant glow of Proxima Centauri. She had spent her entire career dreaming of this moment, the chance to lead the first expedition to explore a new star system. With her crew by her side, she felt unstoppable.', '2024-04-30');
