@@ -1,7 +1,10 @@
-// Script that default hides the contributions on the page 
+function displayContributions() {
+  return $('.view_contributions').slideDown();
+}
 
-const viewButton = document.getElementById('viewadds');
-const contributions = document.querySelector(".contributions")
-viewButton.addEventListener('click', () => {
-  contributions.classList.toggle("hiddentext")
+$(document).ready(function () {
+  $('#viewadds').on("click", function (event) {
+    event.preventDefault(); 
+    $('.view_contributions').slideToggle(); 
+  });
 });
