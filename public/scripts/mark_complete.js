@@ -12,4 +12,4 @@ $(document).ready(()=> {
   });
   console.log($(event.target).data('story'));
  })
-})
+});

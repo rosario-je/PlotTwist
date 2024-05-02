@@ -9,6 +9,7 @@
   <!-- Required Links -->
   <%- include('partials/defaultLinks.ejs'); %>
     <link rel="stylesheet" href="/styles/user_contributions.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/likebuttonstyles.css" type="text/css" />
 
     <!-- Font Awesome Access -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -71,6 +72,12 @@
               <p><span class="contribution-title">Contribution for:</span> <span class="story-title"><%= contribution.story_title%></span></p>
               <div class="divider"></div>
               <p><%= contribution.content%></p>
+            </div>
+            <div class="likecounter">
+              <button class="like-button"><i class="fa-solid fa-heart"></i></button>
+              <span class="like-count">
+                <%=contribution.upvote_count%>
+              </span>
             </div>
           </div>
         <% } %>

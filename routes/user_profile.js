@@ -36,8 +36,6 @@ router.get('/:id/contributions', (req, res) => {
   const id = req.params.id;
   Promise.all([ getUserById(id), getContributionsByUserId(id)])
     .then(([userResults, contributions]) => {  
-      console.log(contributions);
-      console.log(userResults[0]);
       const user = userResults[0];    
       res.render('user_contributions', { user_id: id, listOfContributions: contributions, user });
     })
@@ -82,7 +80,6 @@ router.get('/:id/complete', (req, res) => {
   let id = req.params.id;
   Promise.all([getStoryByStatus(id), getUserById(id)])
     .then(([stories, userResults]) => {   
-      console.log(stories);
       const user = userResults[0];
       res.render('user_complete_story', { user_id: id, completeStories: stories, user });
     })
@@ -97,7 +94,6 @@ router.get('/:id/complete', (req, res) => {
 router.post('/:id/stories/:story_id/completed', (req, res) => {
   const user_id = req.params.id;
   const story_id = req.params.story_id;
-  console.log(user_id, story_id);
   markStoryComplete(story_id, user_id)
   .then((results)=> {
     res.status(201).json(results);
