@@ -1,6 +1,9 @@
 @import "variables";
 
 /*--------------- Section 1 Story Previews ---------------*/
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 #landing_section1 {
   display: flex;
   justify-content: center;
@@ -73,7 +76,6 @@
   justify-content: center;
   align-items: center;
   background-color: $secondary-color;
-
 }
 
 .image1 {
@@ -90,27 +92,155 @@
   }
 }
 /*--------------- Section 2 Story Previews ---------------*/
-.story_previews_landing_section2 {
-  padding-top: 100px;
+@mixin flex-row {
   display: flex;
-  flex-direction: column;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 250px;
-  padding-bottom: 250px;
-  .story_preview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
+  flex-direction: row;
+}
 
-    img {
-      width: 300px;
-      height: 300px;
-      border-radius: 5px;
+@mixin button {
+  display: flex;
+  height: 40px;
+  width: 170px;
+  background-color: $secondary-text;
+  border: none;
+  border-radius: 5px;
+  font-family: "Inter", serif;
+  color: $text-color;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+}
+article {
+  overflow-x: hidden;
+  justify-content: flex-start;
+  white-space: nowrap;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.landing_section2 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  animation: movertl 50s linear infinite;
+  ul {
+    display: flex;
+    flex-direction: row;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    article {
+      overflow-x: hidden;
+      justify-content: flex-start;
+      white-space: nowrap;
+      margin-top: 20px;
+      padding-bottom: 20px;
+      animation: movertl infinite linear;
+      animation-delay: 1s; /* Add a delay to prevent immediate restart */
     }
   }
 }
+.mainstory {
+  justify-content: space-between;
+  width: 50%;
+  height: auto;
+  border-radius: 35px;
+  background: $contrast;
+  padding-left: 45px;
+  padding-right: 45px;
+  margin-top: 40px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+@keyframes  movertl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.usernameusericon {
+  @include flex-row;
+  padding-top: 1.75em;
+  padding-bottom: 10px;
+}
+
+.user {
+  margin-bottom: 0;
+}
+
+.posttime {
+  color: $secondary-text;
+}
+
+.counterbuttons {
+  @include flex-row;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 500;
+  color: $secondary-text;
+  padding-top: 0.5em;
+  padding-bottom: 20px;
+  border-top: solid 3px;
+}
+
+.usericon {
+  height: 4em;
+  width: 4em;
+  margin-right: 0.5em;
+}
+
+.buttons {
+  @include flex-row;
+}
+
+.readbutton {
+  @include button;
+  margin-right: 1em;
+}
+
+.contributebutton {
+  @include button;
+}
+
+.likecounter {
+  @include flex-row;
+  align-items: center;
+}
+
+.like-button {
+  color: $primary-color;
+  border: none;
+  background: inherit;
+  padding-right: 10px;
+}
+
+.story {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.maintitle {
+  text-align: left;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.scrolling-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+
 
 /*--------------- Section 3 About ---------------*/
 #landing_section3 {
@@ -197,7 +327,8 @@ footer {
 
 // Buttons
 
-.signin_button, .signup_button {
+.signin_button,
+.signup_button {
   background-color: $accent-color;
   color: white;
   font-size: 1.25rem;
