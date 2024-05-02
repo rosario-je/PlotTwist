@@ -42,7 +42,7 @@ body {
 
 /* Story Content & Button */
 
-.textarea-container {
+#textarea-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +51,7 @@ body {
   gap: 20px;
 }
 
-.textarea-container textarea {
+#textarea-container textarea {
   width: 100%;
   height: 300px;
   margin-top: 80px;
@@ -78,7 +78,7 @@ body {
   order: 1;
 }
 
-#wordCount {
+#charCount {
   font-size: 24px;
   color: #666;
   order: 2;

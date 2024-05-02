@@ -24,9 +24,8 @@
   <!-- Interal CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/userProfile.css" type="text/css" />
-  
-  <!-- Scripts -->
-  <script defer src="/scripts/likebutton.js"></script>
+
+
 
 
 </head>
@@ -70,7 +69,7 @@
         <section id="recent_posts">
           <div class="recent_post_container">
             <h3>Recent Posts</h3>
-            
+
           </div>
           <!-- Main story box -->
           <section class="main_story_container">
@@ -104,9 +103,7 @@
                     </div>
                     <div class="buttons">
                       <a href="/stories/<%=story.id%>" class="readbutton">Read More</a>
-                      <% if (!story.is_complete) { %>
-                      <a href class="contributebutton">Contribute</a>
-                      <% } %>
+                      <a href ="/add_to_story/<%=story.story_id%>" class="contributebutton">Contribute</a>
                     </div>
                   </section>
                 </article>

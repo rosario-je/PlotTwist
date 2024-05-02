@@ -32,13 +32,13 @@
 
         <!-- Story Body and Button -->
 
-        <div class="textarea-container">
-          <textarea id="storyTextarea" placeholder="Continue Story..."></textarea>
+        <form id="textarea-container" class="contribute-form" action="/stories/contribute/<%=storyId %>" method="post">
+          <textarea id="storyTextarea" name="text" placeholder="Continue Story..."></textarea>
           <div class="button-counter">
-          <span id="wordCount">500</span>
+          <span id="charCount">500</span>
           <button class="post_button">POST</button>
         </div>
-        </div>
+      </form>
 
       </section>
     </body>

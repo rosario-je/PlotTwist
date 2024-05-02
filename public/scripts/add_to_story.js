@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
   const textarea = document.getElementById('storyTextarea');
-  const wordCountDisplay = document.getElementById('wordCount');
-  const maxWords = 500;
-
+  const charCountDisplay = document.getElementById('charCount');
+  const maxChars = 500;
   textarea.addEventListener('input', function () {
-    const words = textarea.value.trim().split(/\s+/).filter(Boolean).length;
-    const remainingWords = maxWords - words;
-    wordCountDisplay.textContent = remainingWords;
-    if (remainingWords < 0) {
-      textarea.value = textarea.value.split(/\s+/).slice(0, maxWords).join(' ');
-      wordCountDisplay.textContent = 0;
+    const charCount = textarea.value.length;
+    const remainingChars = maxChars - charCount;
+    charCountDisplay.textContent = remainingChars;
+    if (remainingChars < 0) {
+      textarea.value = textarea.value.slice(0, maxChars);
+      charCountDisplay.textContent = 0;
     }
   });
 });
