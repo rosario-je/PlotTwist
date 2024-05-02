@@ -49,44 +49,6 @@
 
     </section>
 
-    <!--------------------Story Preview Section-------------------->
-    <section class="landing_section2">
-
-      <!----------- Story Previews (Not finished)----------->
-      <ul> 
-
-        <% for(let story of stories) { %>
-          <article class="mainstory">
-            <section class="usernameusericon">
-              <img class="usericon" src="/docs/icons/<%=story.user_icon%>" alt="">
-              <div class="userposttime">
-                <h2 class="user">@<%=story.username%>
-                </h2>
-                <text class="posttime">
-                  <%=story.created_date%>
-                </text>
-              </div>
-            </section>
-            <section class="titlebody">
-              <h1 class="maintitle">
-                <%=story.title%>
-              </h1>
-              <p class="story">
-                <%=story.content%>
-              </p>
-            </section>
-            <section class="counterbuttons">
-              <div class="likecounter">
-                <i class="fa-solid fa-heart like-button"></i>
-                <div class="like-count">
-                  <%=story.upvote_count%>
-                </div>
-              </div>
-            </section>
-          </article>
-          <% } %>
-      </ul>    
-    </section>
 
     <!-------------------- About Section -------------------->
     <section id="landing_section3">
