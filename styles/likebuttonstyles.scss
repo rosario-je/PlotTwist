@@ -1,0 +1,14 @@
+@import "variables";
+
+.likecounter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.like-button {
+  color: $primary-color;
+  border: none;
+  background: inherit;
+  padding-right: 10px;
+}
