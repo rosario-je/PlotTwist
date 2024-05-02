@@ -63,8 +63,9 @@
   padding-right: 170px;
 }
 
-// Variables //
-@import "variables";
+.see_more_btn {
+  padding-top: 2em;
+}
 
 .main_story_container {
   display: flex;
@@ -167,8 +168,6 @@
   -webkit-box-orient: vertical;
  
 }
-
-
 
 .maintitle {
   text-align: left;
