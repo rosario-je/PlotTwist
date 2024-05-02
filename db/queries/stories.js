@@ -64,4 +64,4 @@ const markStoryComplete = (story_id, user_id) => {
 }
 
 
-module.exports = { getStories, getStoryById, getRecentStories, markStoryComplete };
+module.exports = { getStories, getStoryById, getRecentStories, markStoryComplete , addStory};
