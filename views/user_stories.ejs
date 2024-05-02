@@ -44,10 +44,6 @@
               <a class="user_menu_link" href="">Date Added</a>
             </li>
             <li>
-              <i class="fa-solid fa-heart" style="color: #d90429;"></i>
-              <a class="user_menu_link" href="">Up Votes</a>
-            </li>
-            <li>
               <i class="fa-solid fa-arrow-up-a-z" style="color: #d90429;"></i>
               <a class="user_menu_link" href="">Alphabetical</a>
             </li>
@@ -74,14 +70,19 @@
               <div class="story-details">
                 <p><span class="story-title"><%=story.title%></span></p>
                 <p><%=story.content%></p>
-                <div class="upvotes">
-                  <i class="fa-solid fa-heart" style="color: #d90429;"></i>
-                  <p class="upvote-number"><%=story.upvote_count%></p>
+                <div class="story_footer">
+                  <div class="upvotes">
+                    <i class="fa-solid fa-heart" style="color: #d90429;"></i>
+                    <p class="upvote-number"><%=story.upvote_count%></p>
+                  </div>
+                  <a href="/stories/<%=story.id%>" class="readbutton">Read More</a>
                 </div>
               </div>
               <!-- MARK COMPLETE IS HERE -->
               <% if (!story.is_complete) { %>
-              <a data-story="<%= story.id %>" class="complete-story">Mark Complete</a>
+                <div class="mark-complete">
+                  <a class="complete-story" data-story="<%= story.id %>" >Mark Complete</a>
+              </div>
             <% } %>
             <!--  -->
           </div>

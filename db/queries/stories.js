@@ -1,6 +1,22 @@
 const db = require('../connection');
 
-// CRUD 
+// CRUD
+
+// Create
+const addStory = function (story, id) {
+  console.log(story)
+  return db
+    .query(`INSERT INTO stories (title, content, user_id) VALUES ($1, $2, $3) RETURNING *`, [story.title, story.content, id])
+    .then((result) => {
+      console.log(result.rows[0]);
+      return result.rows[0];
+    })
+    .catch((err) => {
+      console.log(err.message);
+      return null;
+    });
+};
+
 
 // Read All stories
 const getStories = () => {
@@ -16,7 +32,7 @@ const getStories = () => {
 const getStoryById = (id) => {
   return db.query(
     `SELECT stories.*, users.username, users.user_icon FROM stories
-     JOIN users ON users.id = user_id 
+     JOIN users ON users.id = user_id
      WHERE stories.id = $1;`, [id])
     .then(data => {
       return data.rows[0];
@@ -61,4 +77,4 @@ const markStoryComplete = (story_id, user_id) => {
 }
 
 
-module.exports = { getStories, getStoryById, getRecentStories, markStoryComplete, getStoryByStatus };
+module.exports = { getStories, getStoryById, getRecentStories, markStoryComplete, getStoryByStatus , addStory};

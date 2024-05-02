@@ -1,6 +1,9 @@
 @import "variables";
 
 /*--------------- Section 1 Story Previews ---------------*/
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 #landing_section1 {
   display: flex;
   justify-content: center;
@@ -73,7 +76,6 @@
   justify-content: center;
   align-items: center;
   background-color: $secondary-color;
-
 }
 
 .image1 {
@@ -90,27 +92,7 @@
   }
 }
 /*--------------- Section 2 Story Previews ---------------*/
-.story_previews_landing_section2 {
-  padding-top: 100px;
-  display: flex;
-  flex-direction: column;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 250px;
-  padding-bottom: 250px;
-  .story_preview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
 
-    img {
-      width: 300px;
-      height: 300px;
-      border-radius: 5px;
-    }
-  }
-}
 
 /*--------------- Section 3 About ---------------*/
 #landing_section3 {
@@ -197,7 +179,8 @@ footer {
 
 // Buttons
 
-.signin_button, .signup_button {
+.signin_button,
+.signup_button {
   background-color: $accent-color;
   color: white;
   font-size: 1.25rem;

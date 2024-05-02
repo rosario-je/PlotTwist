@@ -27,6 +27,7 @@
   
 
 
+
 </head>
 <%- include('partials/_user_menu'); %>
   <%- include('partials/_user_navbar'); %>
@@ -68,9 +69,7 @@
         <section id="recent_posts">
           <div class="recent_post_container">
             <h3>Recent Posts</h3>
-            <a href="/user/<%=user_id%>/stories">
-              <h3>See More Stories</h3>
-            </a>
+            
           </div>
           <!-- Main story box -->
           <section class="main_story_container">
@@ -103,13 +102,16 @@
                       </div>
                     </div>
                     <div class="buttons">
-                      <a href="/stories/<%=story.story_id%>" class="readbutton">Read More</a>
+                      <a href="/stories/<%=story.id%>" class="readbutton">Read More</a>
                       <a href class="contributebutton">Contribute</a>
                     </div>
                   </section>
                 </article>
                 <% } %>
             </ul>
+            <a class="see_more_btn" href="/user/<%=user_id%>/stories">
+              <h3>See More Stories</h3>
+            </a>
           </section>
         </section>
       </main>

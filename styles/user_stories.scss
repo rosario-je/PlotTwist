@@ -68,10 +68,17 @@
 /* Contributions Card */
 
 .story_card_container{
+  display: flex;
+  flex-direction: column;
   padding-bottom: 50px;
+  align-content: center;
+  align-items: center;
+  width: 100%;
 }
 .story-card {
-  width: 850px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
   height: auto;
   background-color: white;
   padding: 20px;
@@ -137,4 +144,44 @@
     margin-top: 0px;
     margin-bottom: 0px;
   }
+}
+a.complete-story {
+  text-decoration: none;
+  display: flex;
+    height: 40px;
+    width: 170px;
+    background-color: #BBBBBB;
+    border: none;
+    border-radius: 5px;
+    font-family: "Inter", serif;
+    color: #2B2D42;
+    font-size: 20px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+}
+
+a.readbutton {
+  text-decoration: none;
+  display: flex;
+    height: 40px;
+    width: 170px;
+    background-color: #BBBBBB;
+    border: none;
+    border-radius: 5px;
+    font-family: "Inter", serif;
+    color: #2B2D42;
+    font-size: 20px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.story_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
