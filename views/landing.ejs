@@ -9,12 +9,12 @@
   <!-- Required Links -->
   <%- include('partials/defaultLinks.ejs'); %>
 
-  <!-- Interal CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/landing.css" type="text/css" />
-  
+    <!-- Interal CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/landing.css" type="text/css" />
 
-  <!-- Scripts -->
+
+    <!-- Scripts -->
 
 
 </head>
@@ -53,34 +53,39 @@
     <section class="landing_section2">
 
       <!----------- Story Previews (Not finished)----------->
-      <div class="story_previews_landing_section2">
-        <div class="story_preview">
-          <img
-            src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip "
-            alt="story_preview_image">
-          <img
-            src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip "
-            alt="landing_image_test1">
-          <img
-            src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip "
-            alt="landing_image_test1">
-          <img
-            src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip "
-            alt="landing_image_test1">
-          <img
-            src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip "
-            alt="landing_image_test1">
-          <img
-            src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip "
-            alt="landing_image_test1">
-          <img
-            src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip "
-            alt="landing_image_test1">
-          <img
-            src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip "
-            alt="landing_image_test1">
-        </div>
+      <ul> 
 
+        <% for(let story of stories) { %>
+          <article class="mainstory">
+            <section class="usernameusericon">
+              <img class="usericon" src="/docs/icons/<%=story.user_icon%>" alt="">
+              <div class="userposttime">
+                <h2 class="user">@<%=story.username%>
+                </h2>
+                <text class="posttime">
+                  <%=story.created_date%>
+                </text>
+              </div>
+            </section>
+            <section class="titlebody">
+              <h1 class="maintitle">
+                <%=story.title%>
+              </h1>
+              <p class="story">
+                <%=story.content%>
+              </p>
+            </section>
+            <section class="counterbuttons">
+              <div class="likecounter">
+                <i class="fa-solid fa-heart like-button"></i>
+                <div class="like-count">
+                  <%=story.upvote_count%>
+                </div>
+              </div>
+            </section>
+          </article>
+          <% } %>
+      </ul>    
     </section>
 
     <!-------------------- About Section -------------------->
@@ -116,13 +121,16 @@
         </div>
         <div class="footer_info">
           <p>Plot Twist &copy; 2024</p>
-          <a href="https://www.flaticon.com/free-icons/animals" title="animals icons">Animals icons created by Freepik - Flaticon</a>
+          <a href="https://www.flaticon.com/free-icons/animals" title="animals icons">Animals icons created by Freepik -
+            Flaticon</a>
         </div>
       </footer>
     </section>
-  </div>
-  <!----JS Links-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </div>
+    <!----JS Links-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
 
 </body>
 
