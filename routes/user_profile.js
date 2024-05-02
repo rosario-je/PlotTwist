@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const router = express.Router();
 const { getUserById, getUserStories } = require('../db/queries/users');
 const { getContributionsByUserId, getPendingContributionsByUserId } = require('../db/queries/contributions');
-const { getRecentStories, markStoryComplete } = require('../db/queries/stories');
+const { getRecentStories, markStoryComplete, getStoryByStatus } = require('../db/queries/stories');
 
 
 // Middleware to extract user ID from URL parameters and set it in cookies
@@ -12,6 +12,7 @@ router.param('id', (req, res, next, id) => {
   next();
 });
 
+// Main user page (default view)
 
 router.get('/:id', (req, res) => {
   const id = req.cookies["user_id"];
@@ -68,6 +69,22 @@ router.get('/:id/stories', (req, res) => {
     .then(([stories, userResults]) => {   
       const user = userResults[0];
       res.render('user_stories', { user_id: id, listOfStories: stories, user });
+    })
+    .catch(error => {
+      // Handle errors
+      console.error('Error:', error);
+      res.status(500).send('Internal Server Error');
+    });
+}); 
+
+// Route for user stories marked complete
+router.get('/:id/complete', (req, res) => {
+  let id = req.params.id;
+  Promise.all([getStoryByStatus(id), getUserById(id)])
+    .then(([stories, userResults]) => {   
+      console.log(stories);
+      const user = userResults[0];
+      res.render('user_complete_story', { user_id: id, completeStories: stories, user });
     })
     .catch(error => {
       // Handle errors
