@@ -72,6 +72,7 @@
       <section class="view_contributions animate__animated animate__slideInUp" style="display: none">
         <h2 class="subheader">Contributions</h2>
         <% for (let contribution of contributions) {%>
+          <% if (!contribution.is_approved) { %>
           <article class="maincontribution">
             <p class="contributionstory">
               <%=contribution.content%>
@@ -94,6 +95,7 @@
             </section>
           </article>
           <% } %>
+        <% } %>
       </section>
 </body>
 

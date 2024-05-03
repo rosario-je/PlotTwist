@@ -52,7 +52,7 @@
             </li>
           </ul>
         </div>
-
+        
         <section class="contribution_cards_container">
           <% for (let contribution of pendingList) { %>
             <% if (!contribution.is_approved) { %>
@@ -62,7 +62,7 @@
                   <img src="/docs/icons/<%= contribution.avatar%>" alt="Avatar">
                   <div class="user-details">
                     <!-- <h2>story id:<%= contribution.story_id %></h2>
-                <h2>contribution id:<%= contribution.id %></h2> -->
+                        <h2>contribution id:<%= contribution.id %></h2> -->
                     <h2>@<%= contribution.username%>
                     </h2>
                     <p class="timestamp">
@@ -70,9 +70,9 @@
                     </p>
                   </div>
                 </div>
-
+        
                 <!-- Contribution Details -->
-
+        
                 <div class="contribution-details">
                   <p><span class="contribution-title">Contribution for:</span> <span class="story-title">
                       <%= contribution.story_title%>
@@ -89,15 +89,15 @@
                       <%=contribution.upvote_count%>
                     </span>
                   </div>
-                  <a class="approve" data-user_id="<%= contribution.user_id %>"
-                    data-contribution_id="<%= contribution.id %>" data-story_id="<%= contribution.story_id %>">Approve
+                  <a class="approve" data-user_id="<%= contribution.user_id %>" data-contribution_id="<%= contribution.id %>"
+                    data-story_id="<%= contribution.story_id %>">Approve
                     Post</a>
                 </div>
               </div>
               <% } %>
                 <% } %>
         </section>
-      </section>
-    </body>
-
-</html>
+        </section>
+        </body>
+        
+        </html>
