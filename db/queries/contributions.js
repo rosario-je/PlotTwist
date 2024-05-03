@@ -48,4 +48,17 @@ const getPendingContributionsByUserId = (id) => {
     });
 }
 
-module.exports = { addContribution, getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId };
+// Update story status to is_complete = true
+const contributionApproved = (id) => {
+  return db.query(`
+   UPDATE contributions 
+   SET is_approved = true
+   WHERE contributions.id = $1
+   RETURNING *;
+  `, [id])
+  .then(data => {
+    return data.rows;
+  });
+}
+
+module.exports = { addContribution, getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId, contributionApproved };

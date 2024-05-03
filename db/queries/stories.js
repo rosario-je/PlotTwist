@@ -76,5 +76,23 @@ const markStoryComplete = (story_id, user_id) => {
   });
 }
 
+// Update a story with a contribution 
+const updateStory = (story_id, contribution_id) => {
+  return db.query(`
+  UPDATE stories 
+  SET content = (
+    SELECT CONCAT (stories.content,' ', contributions.content) 
+    FROM stories
+    JOIN contributions ON contributions.story_id = stories.id
+    WHERE contributions.story_id = stories.id AND contributions.id = $2
+    ORDER BY contributions.submission_date DESC
+  )
+  WHERE stories.id = $1
+  RETURNING *;
+  `, [story_id, contribution_id])
+  .then(data => {
+    return data.rows;
+  });
+}
 
-module.exports = { getStories, getStoryById, getRecentStories, markStoryComplete, getStoryByStatus , addStory};
+module.exports = { getStories, getStoryById, getRecentStories, markStoryComplete, getStoryByStatus , addStory, updateStory};
