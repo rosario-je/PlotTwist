@@ -76,8 +76,8 @@
                 <%=contribution.upvote_count%>
               </span>
             </div>
+            <a class="approve" data-user_id="<%= contribution.user_id %>" data-contribution_id="<%= contribution.id %>" data-story_id="<%= contribution.story_id %>">Approve Post</a>
           </div>
-          <a class="approve" data-user_id="<%= contribution.user_id %>" data-contribution_id="<%= contribution.id %>" data-story_id="<%= contribution.story_id %>">Approve Post</a>
         <% } %>
         </section>
       </section>
