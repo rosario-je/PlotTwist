@@ -1,9 +1,6 @@
 /* PAGE ARCHITECTURE */
 @import "variables";
 
-body {
-  overflow: hidden;
-}
 
 .add_to_story_container {
   display: flex;
@@ -12,6 +9,7 @@ body {
   float: right;
   height: 100vh;
   align-items: center;
+  overflow-y: auto;
 }
 
 /* RIGHT SIDE CONTENT */
@@ -45,10 +43,11 @@ body {
 #textarea-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 80%;
   gap: 20px;
+  height: 100vh;
+  padding-bottom: 20px;
 }
 
 #textarea-container textarea {

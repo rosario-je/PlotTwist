@@ -1,9 +1,6 @@
 /* PAGE ARCHITECTURE */
 @import "variables";
 
-body {
-  overflow: hidden;
-}
 
 .new_story_container {
   display: flex;
@@ -45,6 +42,7 @@ body {
   align-items: center;
   margin-top: 20px;
   width: 100%;
+  padding-bottom: 20px;
   h3 {
     font-size: 2.5rem;
     font-style: normal;
