@@ -1,9 +1,19 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const router = express.Router();
+
 const { getUserById, getUserStories } = require('../db/queries/users');
-const { getContributionsByUserId, getPendingContributionsByUserId } = require('../db/queries/contributions');
-const { getRecentStories, markStoryComplete, getStoryByStatus, updateStory } = require('../db/queries/stories');
+
+const { getContributionsByUserId,
+  getPendingContributionsByUserId,
+  updateContributionValue
+} = require('../db/queries/contributions');
+
+const { getRecentStories,
+  markStoryComplete,
+  getStoryByStatus,
+  updateStory
+} = require('../db/queries/stories');
 
 
 // Middleware to extract user ID from URL parameters and set it in cookies
@@ -34,22 +44,22 @@ router.get('/:id', (req, res) => {
 // Route for user contributions
 router.get('/:id/contributions', (req, res) => {
   let id = req.params.id;
-  Promise.all([ getUserById(id), getContributionsByUserId(id)])
-    .then(([userResults, contributions]) => {  
-      const user = userResults[0];    
+  Promise.all([getUserById(id), getContributionsByUserId(id)])
+    .then(([userResults, contributions]) => {
+      const user = userResults[0];
       res.render('user_contributions', { user_id: id, listOfContributions: contributions, user });
     })
     .catch(error => {
       console.error('Error:', error);
       res.status(500).send('Internal Server Error');
     });
-}); 
+});
 
 // Route for filtered contributions on user story for approval/rejection 
 router.get('/:id/pending', (req, res) => {
   let id = req.params.id;
   Promise.all([getPendingContributionsByUserId(id), getUserById(id)])
-    .then(([contributions, userResults]) => {   
+    .then(([contributions, userResults]) => {
       const user = userResults[0];
       res.render('pending_adds', { user_id: id, pendingList: contributions, user });
     })
@@ -58,13 +68,13 @@ router.get('/:id/pending', (req, res) => {
       console.error('Error:', error);
       res.status(500).send('Internal Server Error');
     });
-}); 
+});
 
 // Route for user stories
 router.get('/:id/stories', (req, res) => {
   let id = req.params.id;
   Promise.all([getUserStories(id), getUserById(id)])
-    .then(([stories, userResults]) => {   
+    .then(([stories, userResults]) => {
       const user = userResults[0];
       res.render('user_stories', { user_id: id, listOfStories: stories, user });
     })
@@ -73,13 +83,13 @@ router.get('/:id/stories', (req, res) => {
       console.error('Error:', error);
       res.status(500).send('Internal Server Error');
     });
-}); 
+});
 
 // Route for user stories marked complete
 router.get('/:id/complete', (req, res) => {
   let id = req.params.id;
   Promise.all([getStoryByStatus(id), getUserById(id)])
-    .then(([stories, userResults]) => {   
+    .then(([stories, userResults]) => {
       const user = userResults[0];
       res.render('user_complete_story', { user_id: id, completeStories: stories, user });
     })
@@ -88,19 +98,20 @@ router.get('/:id/complete', (req, res) => {
       console.error('Error:', error);
       res.status(500).send('Internal Server Error');
     });
-}); 
+});
 
 // Add a contribution to a story
 router.post('/:id/pending/:story_id/:contribution_id/update_story', (req, res) => {
   const contribution_id = req.params.contribution_id;
   const story_id = req.params.story_id;
+  updateContributionValue(story_id, contribution_id)
   updateStory(story_id, contribution_id)
-  .then((results)=> {
-    res.status(201).json(results);
-  })
-  .catch(error => {
-    res.status(500).send(error.message);
-  });
+    .then((results) => {
+      res.status(201).json(results);
+    })
+    .catch(error => {
+      res.status(500).send(error.message);
+    });
 })
 
 // Mark a story as completed (is_complete = true)
@@ -108,12 +119,12 @@ router.post('/:id/stories/:story_id/completed', (req, res) => {
   const user_id = req.params.id;
   const story_id = req.params.story_id;
   markStoryComplete(story_id, user_id)
-  .then((results)=> {
-    res.status(201).json(results);
-  })
-  .catch(error => {
-    res.status(500).send(error.message);
-  });
+    .then((results) => {
+      res.status(201).json(results);
+    })
+    .catch(error => {
+      res.status(500).send(error.message);
+    });
 })
 
 // Route to create a story for logged-in user
