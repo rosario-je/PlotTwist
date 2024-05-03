@@ -85,7 +85,6 @@ const updateStory = (story_id, contribution_id) => {
     FROM stories
     JOIN contributions ON contributions.story_id = stories.id
     WHERE contributions.story_id = stories.id AND contributions.id = $2
-    ORDER BY contributions.submission_date DESC
   )
   WHERE stories.id = $1
   RETURNING *;
