@@ -65,6 +65,7 @@
             </div>
 
             <!-- Contribution Details -->
+            <% if (!contribution.is_approved) { %>
             <div class="contribution-details">
               <p><span class="contribution-title">Contribution for:</span> <span class="story-title"><%= contribution.story_title%></span></p>
               <div class="divider"></div>
@@ -78,6 +79,7 @@
             </div>
             <a class="approve" data-user_id="<%= contribution.user_id %>" data-contribution_id="<%= contribution.id %>" data-story_id="<%= contribution.story_id %>">Approve Post</a>
           </div>
+          <% } %>
         <% } %>
         </section>
       </section>
