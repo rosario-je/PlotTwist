@@ -38,7 +38,7 @@ const getContributionsByUserId = (id) => {
 
 const getPendingContributionsByUserId = (id) => {
   return db.query(
-    `SELECT contributions.*, users.username AS username, users.user_icon AS avatar, stories.title AS story_title FROM contributions
+    `SELECT contributions.*, users.username AS username, users.user_icon AS avatar, stories.title AS story_title, stories.id AS story_id FROM contributions
        JOIN users ON users.id = contributions.user_id
        JOIN stories ON stories.id = contributions.story_id
        WHERE stories.user_id = $1
@@ -49,16 +49,28 @@ const getPendingContributionsByUserId = (id) => {
 }
 
 // Update story status to is_complete = true
-const contributionApproved = (id) => {
+// const contributionApproved = (id) => {
+//   return db.query(`
+//    UPDATE contributions 
+//    SET is_approved = true
+//    WHERE contributions.id = $1
+//    RETURNING *;
+//   `, [id])
+//   .then(data => {
+//     return data.rows;
+//   });
+// }
+const updateContributionValue = (story_id, contribution_id) => {
   return db.query(`
-   UPDATE contributions 
-   SET is_approved = true
-   WHERE contributions.id = $1
-   RETURNING *;
-  `, [id])
+    UPDATE contributions
+    SET is_approved = true
+    WHERE story_id = $1 AND id = $2
+    RETURNING *;
+  `, [story_id, contribution_id])
   .then(data => {
     return data.rows;
   });
 }
 
-module.exports = { addContribution, getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId, contributionApproved };
+
+module.exports = { addContribution, getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId, updateContributionValue  };
