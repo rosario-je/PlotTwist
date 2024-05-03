@@ -13,7 +13,7 @@ INSERT INTO users (
 INSERT INTO users (
   username, email, date_joined, password, user_icon) 
   VALUES (
-    'dexterkitty', 'dexter@kitty', '2022-11-17', 'password3', 'cat.png');
+    'dexterkitty', 'dexter@kitty', '2021-11-17', 'password3', 'cat.png');
 
 INSERT INTO users (
   username, email, date_joined, password, user_icon) 

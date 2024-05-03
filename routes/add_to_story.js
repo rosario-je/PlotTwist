@@ -8,7 +8,6 @@ router.get('/:id', (req, res) => {
   getUserById(id)
   .then(result => {
     const user = result[0]
-    console.log(user)
     res.render('add_to_story', {user_id: id, storyId, user});
   })
 });

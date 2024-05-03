@@ -68,15 +68,11 @@ router.post('/', (req, res) => {
 // Route for contributing to a story
 
 router.post('/contribute/:id', (req, res) => {
-  console.log("post /contribute/:id");
   let userId = req.cookies["user_id"];
   const storyId = req.params.id;
   const text = req.body.text;
-  console.log(storyId, userId, text);
-
   addContribution(storyId, userId, text)
     .then(data => {
-      console.log(data);
       return res.redirect(`/stories/${storyId}`);
 
     });

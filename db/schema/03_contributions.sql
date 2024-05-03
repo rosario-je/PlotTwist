@@ -5,6 +5,6 @@ CREATE TABLE contributions (
   story_id INTEGER REFERENCES stories(id) ON DELETE CASCADE,
   content TEXT NOT NULL,
   is_approved BOOLEAN NOT NULL DEFAULT FALSE,
-  submission_date DATE,
+  submission_date DATE DEFAULT CURRENT_DATE,
   upvote_count INTEGER DEFAULT 0
 );
