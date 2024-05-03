@@ -3,15 +3,20 @@ const router = express.Router();
 const { getStories, getStoryById } = require('../db/queries/stories');
 const { getContributionsByStoryId, addContribution } = require('../db/queries/contributions');
 const { addStory } = require('../db/queries/stories');
+const { getUserById } = require('../db/queries/users');
 
 // Route for all stories feed
 
 router.get('/', (req, res) => {
   let id = req.cookies["user_id"];
-  getStories()
+  Promise.all([
+    getStories(),
+    getUserById(id)
+  ])
     .then(results => {
-      const stories = results;
-      res.render('stories/index', { stories, user_id: id });
+      const [stories, userInfo] = results;
+      const user = userInfo[0]
+      res.render('stories/index', { stories, user_id: id , user});
     });
 });
 
@@ -38,14 +43,13 @@ router.get('/:id', (req, res) => {
   let id = req.cookies["user_id"];
   Promise.all([
     getStoryById(req.params.id),
-    getContributionsByStoryId(req.params.id)
+    getContributionsByStoryId(req.params.id),
+    getUserById(id)
   ])
     .then(results => {
-      const [story, contributions] = results;
-
-      const templatevars = { story, contributions, user_id: id };
-
-      res.render('stories/show', templatevars);
+      const [story, contributions, userInfo] = results;
+      const user = userInfo[0]
+      return res.render('stories/show', { story, contributions, user_id: id, user });
     });
 });
 
@@ -57,7 +61,7 @@ router.post('/', (req, res) => {
   addStory(req.body, id)
     .then(data => {
       const id = data.id;
-      res.redirect(`/stories/real-time?id=${id}`);
+      return res.redirect(`/stories/${id}`);
     });
 });
 
@@ -73,7 +77,7 @@ router.post('/contribute/:id', (req, res) => {
   addContribution(storyId, userId, text)
     .then(data => {
       console.log(data);
-      res.redirect(`/stories/real-time?id=${storyId}`);
+      return res.redirect(`/stories/${storyId}`);
 
     });
 
