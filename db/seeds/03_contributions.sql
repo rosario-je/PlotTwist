@@ -39,3 +39,8 @@ INSERT INTO contributions (
   user_id, story_id, content, submission_date)
   VALUES (
   6, 5, 'Captain Sarah Novak gazed out of the viewport of the interstellar vessel, Pioneer, her eyes fixed on the distant glow of Proxima Centauri. She had spent her entire career dreaming of this moment, the chance to lead the first expedition to explore a new star system. With her crew by her side, she felt unstoppable.', '2024-04-30');
+
+INSERT INTO contributions (
+  user_id, story_id, content, submission_date, upvote_count)
+VALUES (
+  2, 1, 'THIS IS A TEST', '2024-05-01', 0);
