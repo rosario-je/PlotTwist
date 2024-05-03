@@ -1,6 +1,14 @@
 <link rel="stylesheet" href="/styles/user_menu.css" type="text/css" />
 
 <div class="user_menu">
+   <!-- User profile header -->
+   <div class="user_menu_profile">
+    <!-- User avatar and name -->
+    <img src="/docs/icons/<%=user.user_icon%>" alt="User Avatar">
+    <h1>
+      @<%=user.username%>
+    </h1>
+  </div>
   <ul>
     <li>
       <i class="fa-solid fa-house" style="color: #d90429;"></i>
