@@ -4,6 +4,8 @@
 
 Plot Twist is a web application where users can co-create stories. Unleash your creativity and embark on unexpected narrative journeys with others!
 
+!['Plot Twist'](https://github.com/rosario-je/PlotTwist/blob/main/development/public/docs/devices.png)
+
 ## Features
 
 * **Join the Plot:** Create an account or login to access the main feed. (Authentication)
