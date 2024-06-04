@@ -10,6 +10,5 @@ $(document).ready(()=> {
     console.log("Ajax call complete", results);
     $(event.target).remove();
   });
-  console.log($(event.target).data('story'));
  })
 });

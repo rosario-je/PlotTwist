@@ -3,10 +3,12 @@ const db = require('../connection');
 // CRUD
 
 // Create
-const addStory = function (story, id) {
-  console.log(story)
+const addStory = function(story, id) {
+  console.log(story);
   return db
-    .query(`INSERT INTO stories (title, content, user_id) VALUES ($1, $2, $3) RETURNING *`, [story.title, story.content, id])
+    .query(`INSERT INTO stories (title, content, user_id) 
+    VALUES ($1, $2, $3) RETURNING *`, 
+    [story.title, story.content, id])
     .then((result) => {
       console.log(result.rows[0]);
       return result.rows[0];
@@ -27,7 +29,7 @@ const getStories = () => {
     .then(data => {
       return data.rows;
     });
-}
+};
 // Read One story
 const getStoryById = (id) => {
   return db.query(
@@ -37,7 +39,7 @@ const getStoryById = (id) => {
     .then(data => {
       return data.rows[0];
     });
-}
+};
 
 // Read Complete Stories
 const getStoryByStatus = (id) => {
@@ -49,19 +51,19 @@ const getStoryByStatus = (id) => {
     .then(data => {
       return data.rows;
     });
-}
+};
 
 // Read 3 recent stories
 const getRecentStories = () => {
   return db.query(
-  `SELECT stories.*, users.username, users.user_icon FROM stories
+    `SELECT stories.*, users.username, users.user_icon FROM stories
   JOIN users ON users.id = user_id
   ORDER BY stories.created_date DESC
   LIMIT 3;`)
-  .then(data => {
-    return data.rows;
-  });
-}
+    .then(data => {
+      return data.rows;
+    });
+};
 
 // Update story status to is_complete = true
 const markStoryComplete = (story_id, user_id) => {
@@ -71,10 +73,10 @@ const markStoryComplete = (story_id, user_id) => {
    WHERE stories.id = $1 AND stories.user_id = $2
    RETURNING *;
   `, [story_id, user_id])
-  .then(data => {
-    return data.rows;
-  });
-}
+    .then(data => {
+      return data.rows;
+    });
+};
 
 // Update a story with a contribution 
 const updateStory = (story_id, contribution_id) => {
@@ -89,9 +91,24 @@ const updateStory = (story_id, contribution_id) => {
   WHERE stories.id = $1
   RETURNING *;
   `, [story_id, contribution_id])
+    .then(data => {
+      return data.rows;
+    });
+};
+
+// Update like counter for a story
+
+const updateStoryLikes = (story_id, upvote_count) => {
+  return db.query(`
+  UPDATE stories 
+  SET upvote_count = $2
+  WHERE story_id = $1
+  RETURNING *;
+  `, [story_id, upvote_count])
   .then(data => {
+    console.log("This is DB", data);
     return data.rows;
   });
-}
+};
 
-module.exports = { getStories, getStoryById, getRecentStories, markStoryComplete, getStoryByStatus , addStory, updateStory};
+module.exports = { getStories, getStoryById, getRecentStories, markStoryComplete, getStoryByStatus, addStory, updateStory, updateStoryLikes };
