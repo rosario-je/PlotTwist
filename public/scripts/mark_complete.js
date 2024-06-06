@@ -7,7 +7,6 @@ $(document).ready(()=> {
   const story_id = $(event.target).data('story');
   const route = `stories/${story_id}/completed`;
   $.post(route, (results) => {
-    console.log("Ajax call complete", results);
     $(event.target).remove();
   });
  })

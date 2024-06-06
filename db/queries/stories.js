@@ -4,17 +4,14 @@ const db = require('../connection');
 
 // Create
 const addStory = function(story, id) {
-  console.log(story);
   return db
     .query(`INSERT INTO stories (title, content, user_id) 
     VALUES ($1, $2, $3) RETURNING *`, 
     [story.title, story.content, id])
     .then((result) => {
-      console.log(result.rows[0]);
       return result.rows[0];
     })
     .catch((err) => {
-      console.log(err.message);
       return null;
     });
 };
