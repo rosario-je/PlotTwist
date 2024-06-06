@@ -23,7 +23,7 @@ $(document).ready(() => {
     upvote_count++;
     likeCountElement.text(upvote_count);
     console.log(upvote_count, story_id);
-    const route = `/stories/${story_id}/liked`;
+    const route =`/stories/${story_id}/liked`;
     $.post(route, { upvote_count }, (results) => {
       console.log(results);
     });
