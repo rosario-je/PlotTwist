@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { getStories, getStoryById } = require('../db/queries/stories');
-const { getContributionsByStoryId, addContribution } = require('../db/queries/contributions');
-const { addStory } = require('../db/queries/stories');
-const { getUserById } = require('../db/queries/users');
+const { getStories, getStoryById } = require('../../db/queries/stories');
+const { getContributionsByStoryId, addContribution } = require('../../db/queries/contributions');
+const { addStory } = require('../../db/queries/stories');
+const { getUserById } = require('../../db/queries/users');
 
 // Route for all stories feed
 

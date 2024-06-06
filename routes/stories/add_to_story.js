@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const { getUserById } = require('../db/queries/users');
+const { getUserById } = require('../../db/queries/users');
 
 router.get('/:id', (req, res) => {
   let id = req.cookies["user_id"]

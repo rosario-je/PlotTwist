@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { updateStoryLikes } = require('../db/queries/stories');
+const { updateStoryLikes } = require('../../db/queries/stories');
 
 // Middleware to extract user ID from URL parameters and set it in cookies
 router.param('id', (req, res, next, id) => {

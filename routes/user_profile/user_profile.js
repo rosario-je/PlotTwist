@@ -2,18 +2,18 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const router = express.Router();
 
-const { getUserById, getUserStories } = require('../db/queries/users');
+const { getUserById, getUserStories } = require('../../db/queries/users');
 
 const { getContributionsByUserId,
   getPendingContributionsByUserId,
   updateContributionValue
-} = require('../db/queries/contributions');
+} = require('../../db/queries/contributions');
 
 const { getRecentStories,
   markStoryComplete,
   getStoryByStatus,
   updateStory
-} = require('../db/queries/stories');
+} = require('../../db/queries/stories');
 
 
 // Middleware to extract user ID from URL parameters and set it in cookies
