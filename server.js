@@ -43,9 +43,6 @@ const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register')
 
 const storyRoutes = require('./routes/stories');
-
-
-
 const userProfileRoute = require('./routes/user_profile')
 const addToStoryRoute = require('./routes/add_to_story')
 

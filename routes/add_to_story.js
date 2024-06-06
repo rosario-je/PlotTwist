@@ -8,7 +8,7 @@ router.get('/:id', (req, res) => {
   getUserById(id)
   .then(result => {
     const user = result[0]
-    res.render('add_to_story', {user_id: id, storyId, user});
+    res.render('stories/add_to_story', {user_id: id, storyId, user});
   })
 });
 

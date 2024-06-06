@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
     .then(results => {
       const user = results[0][0];
       const stories = results[1];
-      res.render('user_profile', { user, stories, user_id: id });
+      res.render('user/user_profile', { user, stories, user_id: id });
     })
     .catch(error => {
       console.error('Error:', error);
@@ -47,7 +47,7 @@ router.get('/:id/contributions', (req, res) => {
   Promise.all([getUserById(id), getContributionsByUserId(id)])
     .then(([userResults, contributions]) => {
       const user = userResults[0];
-      res.render('user_contributions', { user_id: id, listOfContributions: contributions, user });
+      res.render('user/user_contributions', { user_id: id, listOfContributions: contributions, user });
     })
     .catch(error => {
       console.error('Error:', error);
@@ -61,7 +61,7 @@ router.get('/:id/pending', (req, res) => {
   Promise.all([getPendingContributionsByUserId(id), getUserById(id)])
     .then(([contributions, userResults]) => {
       const user = userResults[0];
-      res.render('pending_adds', { user_id: id, pendingList: contributions, user });
+      res.render('stories/pending_adds', { user_id: id, pendingList: contributions, user });
     })
     .catch(error => {
       // Handle errors
@@ -76,7 +76,7 @@ router.get('/:id/stories', (req, res) => {
   Promise.all([getUserStories(id), getUserById(id)])
     .then(([stories, userResults]) => {
       const user = userResults[0];
-      res.render('user_stories', { user_id: id, listOfStories: stories, user });
+      res.render('user/user_stories', { user_id: id, listOfStories: stories, user });
     })
     .catch(error => {
       // Handle errors
@@ -91,7 +91,7 @@ router.get('/:id/complete', (req, res) => {
   Promise.all([getStoryByStatus(id), getUserById(id)])
     .then(([stories, userResults]) => {
       const user = userResults[0];
-      res.render('user_complete_story', { user_id: id, completeStories: stories, user });
+      res.render('user/user_complete_story', { user_id: id, completeStories: stories, user });
     })
     .catch(error => {
       // Handle errors
@@ -133,7 +133,7 @@ router.get('/:id/new_story', (req, res) => {
   getUserById(id)
     .then(users => {
       const user = users[0];
-      res.render('new_story', { user_id: id, user });
+      res.render('stories/new_story', { user_id: id, user });
     })
     .catch(error => {
       console.error('Error:', error);
