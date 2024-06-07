@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   getStories()
   .then(results => {
       const stories = results
-    res.render('landing', {stories});
+    res.render('main_page/landing', {stories});
   });
 }); 
 
