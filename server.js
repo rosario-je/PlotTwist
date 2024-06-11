@@ -1,6 +1,7 @@
 // load .env data into process.env
 require('dotenv').config();
 
+
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
@@ -45,6 +46,7 @@ const registerRoute = require('./routes/main_page/register');
 const storyRoutes = require('./routes/stories/stories');
 const userProfileRoute = require('./routes/user_profile/user_profile');
 const addToStoryRoute = require('./routes/stories/add_to_story');
+const likeCountRoute = require('./routes/stories/like_count.js');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -63,6 +65,7 @@ app.use('/user', userProfileRoute);
 
 app.use('/stories', storyRoutes)
 app.use('/add_to_story', addToStoryRoute)
+app.use('/like', likeCountRoute)
 
 // Note: mount other resources here, using the same pattern above
 
