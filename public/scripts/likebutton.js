@@ -32,8 +32,18 @@ $(document).ready(() => {
     console.log("AJAX ONE");
     const route = `/stories/${storyId}`;
 
-    $.post(route, { upvote_count, storyId }, (results) => {
-      console.log("AJAX", results);
+    $.ajax({
+      url: '/like/stories/' + storyId,
+      type: 'POST',
+      data: { upvote_count: upvote_count },
+      success: function (response) {
+        // Handle success if needed
+        console.log('Like count updated successfully');
+      },
+      error: function (xhr, status, error) {
+        // Handle error if needed
+        console.error('Error updating like count:', error);
+      }
     });
   });
 });
@@ -50,4 +60,10 @@ $(document).ready(() => {
 //       // Handle error if needed
 //       console.error('Error updating like count:', error);
 //   }
+// });
+
+
+
+// $.post(route, { upvote_count, storyId }, (results) => {
+//   console.log("AJAX", results);
 // });

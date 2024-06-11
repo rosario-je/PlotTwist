@@ -99,7 +99,7 @@ const updateStoryLikes = (story_id, upvote_count) => {
   return db.query(`
   UPDATE stories 
   SET upvote_count = $2
-  WHERE story_id = $1
+  WHERE stories.id = $1
   RETURNING *;
   `, [story_id, upvote_count])
   .then(data => {
