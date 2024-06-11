@@ -22,10 +22,11 @@ $(document).ready(() => {
     let upvote_count = parseInt(likeCountElement.text());
     upvote_count++;
     likeCountElement.text(upvote_count);
-    console.log(upvote_count, story_id);
-    const route =`/stories/${story_id}/liked`;
-    $.post(route, { upvote_count }, (results) => {
-      console.log(results);
+    console.log("AJAX ONE", upvote_count, story_id);
+    const route =`/stories/${story_id}`;
+    // $.post(route, { upvote_count }, (results) => {
+      $.post(route, (res, req) => {
+        console.log("AJAX", results);
+      })
     });
   });
-});

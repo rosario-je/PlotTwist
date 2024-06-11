@@ -40,11 +40,11 @@ app.use(express.static('public'));
 
 const landingRoute = require('./routes/main_page/landing.js');
 const loginRoute = require('./routes/main_page/login');
-const registerRoute = require('./routes/main_page/register')
+const registerRoute = require('./routes/main_page/register');
 
 const storyRoutes = require('./routes/stories/stories');
-const userProfileRoute = require('./routes/user_profile/user_profile')
-const addToStoryRoute = require('./routes/stories/add_to_story')
+const userProfileRoute = require('./routes/user_profile/user_profile');
+const addToStoryRoute = require('./routes/stories/add_to_story');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own

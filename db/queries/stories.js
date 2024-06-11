@@ -103,7 +103,6 @@ const updateStoryLikes = (story_id, upvote_count) => {
   RETURNING *;
   `, [story_id, upvote_count])
   .then(data => {
-    console.log("This is DB", data);
     return data.rows;
   });
 };

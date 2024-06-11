@@ -20,7 +20,6 @@ router.get('/', (req, res) => {
     });
 });
 
-
 // Story post rending
 
 router.get("/real-time", (req, res) => {
@@ -74,7 +73,6 @@ router.post('/contribute/:id', (req, res) => {
   addContribution(storyId, userId, text)
     .then(data => {
       return res.redirect(`/stories/${storyId}`);
-
     });
 
 });

@@ -9,12 +9,14 @@ router.param('id', (req, res, next, id) => {
 });
 
 // Update a like count for a story
-router.post('/stories/:story_id/liked', (req, res) => {
+router.post(':id/stories/:story_id', (req, res) => {
+  let id = req.params.id;
   const story_id = req.params.story_id;
   const upvote_count = req.body.upvote_count;
+  console.log("ROUTER", story_id, upvote_count);
   updateStoryLikes(story_id, upvote_count)
     .then((results) => {
-      res.status(201).json(results);
+      return res.redirect(`/stories/${story_id}`, {  user_id: id });
     })
     .catch(error => {
       res.status(500).send(error.message);
