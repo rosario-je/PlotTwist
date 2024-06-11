@@ -37,3 +37,17 @@ $(document).ready(() => {
     });
   });
 });
+
+// $.ajax({
+//   url: '/like/stories/' + story_id,
+//   type: 'POST',
+//   data: { upvote_count: upvote_count },
+//   success: function(response) {
+//       // Handle success if needed
+//       console.log('Like count updated successfully');
+//   },
+//   error: function(xhr, status, error) {
+//       // Handle error if needed
+//       console.error('Error updating like count:', error);
+//   }
+// });
