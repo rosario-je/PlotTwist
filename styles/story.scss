@@ -103,6 +103,13 @@
   padding-right: 10px;
 }
 
+.like-button-contribution {
+  color: $primary-color;
+  border: none;
+  background: inherit;
+  padding-right: 10px;
+}
+
 .storybuttons {
   @include flex-row;
   width: 77%;
