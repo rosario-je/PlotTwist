@@ -25,7 +25,9 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/userProfile.css" type="text/css" />
 
-
+  <!-- Internal Scripts -->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/likebutton.js"></script>
 
 
 </head>
@@ -95,12 +97,14 @@
                     </p>
                   </section>
                   <section class="counterbuttons">
-                    <div class="likecounter">
-                      <i class="fa-solid fa-heart like-button"></i>
-                      <div class="like-count">
-                        <%=story.upvote_count%>
-                      </div>
+                  <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
+                  <div class="likecounter">
+                    <button class="like-button-story" data-liked_story="<%= story.id %>"><i class="fa-solid fa-heart heart"></i></button>
+                    <div class="like-count">
+                      <%=story.upvote_count%>
                     </div>
+                  </div>
+                  <!--DO NOT SEPERATE LIKE-BUTTON FROM LIKE-COUNT-->
                     <div class="buttons">
                       <a href="/stories/<%=story.id%>" class="readbutton">Read More</a>
                       <% if (!story.is_complete) { %>
