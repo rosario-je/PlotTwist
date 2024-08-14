@@ -2,7 +2,7 @@
 // Like button and Like counter elements in HTML need to be together for this function to work properly
 
 $(document).ready(() => {
-  $('.like-button').on('click', function (event) {
+  $('.like-button-story').on('click', function (event) {
     event.preventDefault();
 
     let storyId = $(this).data('liked_story');
