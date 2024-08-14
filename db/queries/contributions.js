@@ -72,5 +72,17 @@ const updateContributionValue = (story_id, contribution_id) => {
   });
 }
 
+const updateContributionLikes = (contribution_id, upvote_count) => {
+  return db.query(`
+  UPDATE contributions 
+  SET upvote_count = $2
+  WHERE contributions.id = $1
+  RETURNING *;
+  `, [contribution_id, upvote_count])
+  .then(data => {
+    return data.rows;
+  });
+};
 
-module.exports = { addContribution, getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId, updateContributionValue  };
+
+module.exports = { addContribution, getContributionsByStoryId, getContributionsByUserId, getPendingContributionsByUserId, updateContributionValue, updateContributionLikes  };

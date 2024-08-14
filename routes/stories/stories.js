@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { getStories, getStoryById } = require('../../db/queries/stories');
-const { getContributionsByStoryId, addContribution } = require('../../db/queries/contributions');
+const { getStories, getStoryById, updateStoryLikes } = require('../../db/queries/stories');
+const { getContributionsByStoryId, addContribution, updateContributionLikes } = require('../../db/queries/contributions');
 const { addStory } = require('../../db/queries/stories');
 const { getUserById } = require('../../db/queries/users');
 
@@ -75,6 +75,25 @@ router.post('/contribute/:id', (req, res) => {
       return res.redirect(`/stories/${storyId}`);
     });
 
+});
+
+// Update a like count
+router.post('/:id/like', (req, res) => {
+  const { type, id, upvote_count } = req.body;
+  const story_id = req.params.id;
+  console.log('Request body:', req.body);
+
+  if (type === 'story') {
+    updateStoryLikes(story_id, upvote_count)
+      .then(() => res.status(200).send('Story like count updated'))
+      .catch(error => res.status(500).send(error.message));
+  } else if (type === 'contribution') {
+    updateContributionLikes(id, upvote_count)
+      .then(() => res.status(200).send('Contribution like count updated'))
+      .catch(error => res.status(500).send(error.message));
+  } else {
+    res.status(400).send('Invalid type');
+  }
 });
 
 module.exports = router;
